@@ -1,0 +1,99 @@
+version: 1
+experiment: pyrecest_followup_20261002
+pyrecest:
+  vendor_path: work/vendor/PyRecEst
+  commit: 7eff44c5f4d62c54a8394270fc924cb1302f171b
+dataset:
+  frozen_config: configs/wormid_prospective.yaml
+  frozen_inventory: outputs/paper/source-results/prospective.json
+  interpretation: followup_on_previously_evaluated_recordings
+association:
+  strides: [1, 5, 10, 20, 40]
+  base_seed: 20260720
+  geometry:
+    reference_weight: 6.0
+    descriptor_weight: 0.0
+    descriptor_quantiles: 32
+    affine_iterations: 6
+    affine_ridge: 0.2
+    affine_huber_delta: 2.5
+    affine_min_scale: 0.7
+    affine_max_scale: 1.4
+    spatial_scale_floor_um: 0.1
+candidates:
+  - name: gnn_equivalence_control
+    method: pyrecest_gnn
+    control: true
+    family: control
+    config:
+      mode: equivalence
+  - name: gnn_kalman
+    method: pyrecest_gnn
+    family: gnn
+    config:
+      mode: kalman
+  - name: gnn_smoothing
+    method: pyrecest_gnn
+    family: gnn
+    config:
+      mode: kalman
+      measurement_noise_um: 0.75
+      process_noise_um: 0.35
+  - name: gnn_velocity
+    method: pyrecest_gnn
+    family: gnn
+    config:
+      mode: kalman
+      local_velocity_weight: 0.5
+  - name: gnn_adaptive_covariance
+    method: pyrecest_gnn
+    family: gnn
+    config:
+      mode: kalman
+      adaptive_process_noise: 0.1
+  - name: mht_geometry_online
+    method: pyrecest_mht
+    family: mht_online
+    config:
+      max_global_hypotheses: 4
+      hypotheses_per_parent: 3
+      max_measurements_per_track: 5
+      fixed_lag: 0
+      use_gaussian_cost: false
+  - name: mht_geometry_lag2
+    method: pyrecest_mht
+    family: mht_lag2
+    config:
+      max_global_hypotheses: 4
+      hypotheses_per_parent: 3
+      max_measurements_per_track: 5
+      fixed_lag: 2
+      use_gaussian_cost: false
+  - name: mht_gaussian_lag2
+    method: pyrecest_mht
+    family: mht_lag2
+    config:
+      max_global_hypotheses: 4
+      hypotheses_per_parent: 3
+      max_measurements_per_track: 5
+      fixed_lag: 2
+      use_gaussian_cost: true
+tuning:
+  objective: mean_identity_accuracy
+  tie_break: [identity_switch_rate, runtime_seconds, name]
+evaluation:
+  baselines: [dual_anchor, first_affine]
+  bootstrap_samples: 20000
+  bootstrap_seed: 20261002
+  selection: one_noncontrol_winner_per_family_on_tuning_only
+provenance:
+  pyrecest_commit: 7eff44c5f4d62c54a8394270fc924cb1302f171b
+  pyrecest_version: 2.4.3
+  computation_host: gpuserver6000
+  maximum_workers: 12
+  blas_threads_per_worker: 1
+  tuning_recording_count: 1
+  evaluation_recording_count: 20
+  previous_prospective_recording_count: 16
+  newly_untouched_recordings: 0
+  delay_unit: selected_scans

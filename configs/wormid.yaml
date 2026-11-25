@@ -1,0 +1,38 @@
+dataset:
+  root: /mnt/d/CodexData/wha_neuron_data/wormid_ey
+  tuning_recording: sub-20190925-04_ses-20190925_ophys
+  held_out_recordings:
+    - sub-20190929-02_ses-20190929_ophys
+    - sub-20190929-05_ses-20190929_ophys
+    - sub-20190929-07_ses-20190929_ophys
+    - sub-20191030-07_ses-20191030_ophys
+
+protocol:
+  temporal_strides: [1, 5, 10, 20, 40]
+  severe_motion: exact_top_25_percent_label_free_symmetric_chamfer_per_recording_and_stride
+  severe_motion_tiebreak: descending_motion_then_earlier_source_frame_index
+  first_frame_identity_seed: true
+  labels_used_for_association: false
+  random_seed: 20260720
+
+methods:
+  - previous_hungarian
+  - pairwise_affine
+  - first_affine
+  - dual_anchor
+
+frozen_tracker:
+  reference_weight: 6.0
+  descriptor_weight: 0.0
+  descriptor_quantiles: 32
+  affine_iterations: 6
+  affine_ridge: 0.2
+  affine_huber_delta: 2.5
+  affine_min_scale: 0.70
+  affine_max_scale: 1.40
+  spatial_scale_floor_um: 0.10
+
+evaluation:
+  primary: seeded_idf1
+  secondary: [identity_switches, severe_identity_accuracy, runtime_seconds]
+  uncertainty: paired_complete_recording_bootstrap

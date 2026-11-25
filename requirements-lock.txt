@@ -1,0 +1,21 @@
+# Direct dependency pins observed for the 2026-07-20 paper artifact.
+# This file is intentionally not described as a fully resolved transitive lock:
+# pip may select different transitive packages on another Python/platform pair.
+# outputs/paper/environment.txt records the key versions in the verified run.
+aiohttp==3.14.1
+fsspec==2026.6.0
+h5py==3.16.0
+matplotlib==3.10.8
+networkx==3.4.2
+numpy==2.2.6
+pandas==2.3.3
+Pillow==12.3.0
+pypdf==6.14.2
+PyYAML==6.0.3
+reportlab==5.0.0
+scikit-learn==1.7.2
+scipy==1.15.3
+
+# Direct verification-tool pins
+pytest==9.0.2
+ruff==0.15.20

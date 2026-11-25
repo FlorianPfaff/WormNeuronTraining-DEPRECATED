@@ -1,0 +1,128 @@
+schema_version: 2
+frozen_on: 2026-07-20
+notes:
+  - Paths are machine-local and may be overridden when reproducing the study.
+  - SHA-256 is the file-identity check; sizes are bytes.
+  - Identity labels and calcium traces are evaluation-only unless a row says otherwise.
+  - The five locally downloaded WormID recordings formed a legacy convenience subset; the frozen geometry expansion includes every remaining asset in the 21-subject immutable DANDI version.
+
+datasets:
+  wormid_ey:
+    role: immutable 21-asset source; one tuning recording, four legacy split-evaluation recordings, and 16 outcome-untouched geometry-expansion recordings
+    dandiset: "000541"
+    version: "0.241009.1457"
+    prospective_protocol: docs/prospective_expansion_protocol.md
+    prospective_protocol_sha256: b99c18526c104993aced172231607e0588c4e84e0b0cce6919d94af7407b56c3
+    prospective_config: configs/wormid_prospective.yaml
+    prospective_config_sha256: fdca2e18c61bcb3544106c4cd14e0945be789e6818ecd5e8904d9990c3b42bf0
+    notes:
+      - The files listed below are the five full NWB assets downloaded locally for tuning, legacy evaluation, image-patch, confidence, and downstream analyses.
+      - The 16 additional geometry records are range-extracted from the same immutable DANDI version; their exact asset IDs, declared source digests, cache hashes, and cohort roles are recorded in work/results/wormid_prospective_expansion.json.
+    files:
+      - recording_id: sub-20190925-04_ses-20190925_ophys
+        split: tuning
+        path: /mnt/d/CodexData/wha_neuron_data/wormid_ey/sub-20190925-04_ses-20190925_ophys.nwb
+        size: 1453958228
+        sha256: 15add480b4e9614191dffbaa38fd0a8a2d59f405c3096d1bb0a20ad13916a545
+      - recording_id: sub-20190929-02_ses-20190929_ophys
+        split: legacy_evaluation
+        path: /mnt/d/CodexData/wha_neuron_data/wormid_ey/sub-20190929-02_ses-20190929_ophys.nwb
+        size: 1454828020
+        sha256: 7a2810d57f82d2e8f776d5b7167880e27ae8bf9068fb03e9c3ad287fa93f43cb
+      - recording_id: sub-20190929-05_ses-20190929_ophys
+        split: legacy_evaluation
+        path: /mnt/d/CodexData/wha_neuron_data/wormid_ey/sub-20190929-05_ses-20190929_ophys.nwb
+        size: 1455020516
+        sha256: 91ba55b307e32c4807aecd3ee85dc302d8338fd37b3ad0c0e937fb679453ab19
+      - recording_id: sub-20190929-07_ses-20190929_ophys
+        split: legacy_evaluation
+        path: /mnt/d/CodexData/wha_neuron_data/wormid_ey/sub-20190929-07_ses-20190929_ophys.nwb
+        size: 1420403684
+        sha256: b189e24c4c121e9c7b3a3664db02c7aa74763a86676aa382724569ff8856d113
+      - recording_id: sub-20191030-07_ses-20191030_ophys
+        split: legacy_evaluation
+        path: /mnt/d/CodexData/wha_neuron_data/wormid_ey/sub-20191030-07_ses-20191030_ophys.nwb
+        size: 1454102180
+        sha256: d12d756c2809af556b2b8a697d6efd5cdec7cfa64d139968f36c208c90ec46a5
+
+  ascent_opterra:
+    role: provenance for frozen ASCENT evaluator artifacts; audit-only, not reproduced by a local CLI in this repository
+    files:
+      - name: raw_volume
+        path: /mnt/d/CodexData/wha_neuron_data/InHouse_Opterra_CH_RG_Day1_OP50Stim_1100frames.h5
+        size: 6236570944
+        sha256: 8bf73f64a062ea9a6cdf8f4876b5bdd63fc1b6036ddf94f887a8fc907fe18847
+      - name: released_checkpoint
+        path: /mnt/d/CodexData/wha_neuron_data/NETr-Opterra.pth
+        size: 95316934
+        sha256: 962a8a3fc766d776b3e88380af9ffca05ec40d7ca1061326bca7b8220fa06c5b
+      - name: ground_truth_coordinates
+        path: work/data/InHouse_Opterra_coords_GT.csv
+        size: 2115526
+        sha256: 7f7be3429eee70773c1c7082226d2a04be5a802c31c5541dc21e5cea221fc81d
+      - name: released_predicted_coordinates
+        path: work/data/InHouse_Opterra_coords_PRED.csv
+        size: 8951383
+        sha256: 5cae0a6fb25b397559942e447a5803929f9548aef722ae17e2ff7de469a495ee
+      - name: ground_truth_tracks
+        path: work/data/InHouse_Opterra_tracks_GT.csv
+        size: 2548928
+        sha256: 2cef1d39672e45469af043b59d864b340059107ff578a82ef61c48937ffb8662
+      - name: released_predicted_tracks
+        path: work/data/InHouse_Opterra_tracks_PRED.csv
+        size: 3054925
+        sha256: 3dc9afed05188df09fb72fb4dce210c60147ed7fe9e37b06d900a6030107ed7b
+
+  targettrack_demo:
+    role: independent 3D mask/extent cue-isolation and temporal sensitivity study
+    files:
+      - name: source_archive
+        path: work/data/targettrack_assets/volumetric-tracking-data-and-videos.zip
+        size: 164166636
+        sha256: 9aaed66d333dff47257a32c6753f517e601b35ce9498334bdae80cd47f506d87
+      - name: extracted_epfl10
+        path: work/data/targettrack_assets/extracted/epfl10_CZANet_Final.h5
+        size: 92153504
+        sha256: ba283bb33fdeb625d266d5fc00fa14a12922f845b07a68c348ddadd01f3287ea
+
+  fdnc_tracking:
+    role: independent partial-label sequential-association stress test
+    files:
+      - name: released_tracking_archive
+        path: work/data/fDNC_assets/test_tracking.zip
+        size: 3454873
+        sha256: c2ec84c3c87242c91f8c6aeae8f8a8533e3d2f6d71959f81adad3b05bba330a0
+      - name: released_model
+        path: work/data/fDNC_assets/model.bin
+        size: 16627987
+        sha256: ab529eb6a886cb6ab3f199b7aaa4e49b82562dc280b3ac736ed61e25d5138ec9
+
+derived_caches:
+  wormid_extent_features:
+    role: reproducibility accelerator derived from the verified WormID NWB inputs
+    authoritative_input: false
+    regeneration: python -m deformeot.wormid_extent --regenerate-features
+    notes:
+      - These NPZ files are excluded from the compact reproduction bundle.
+      - Byte hashes identify the caches used for the frozen analysis; regenerate them from the NWB files if unavailable.
+    files:
+      - recording_id: sub-20190925-04_ses-20190925_ophys
+        path: work/results/wormid_extent/features/sub-20190925-04_ses-20190925_ophys.npz
+        size: 17715813
+        sha256: 7a4db1dc70f41302db1a1621b9eef1ec54341d7e3d7ce4ef2c0c0e9a52a7bd65
+      - recording_id: sub-20190929-02_ses-20190929_ophys
+        path: work/results/wormid_extent/features/sub-20190929-02_ses-20190929_ophys.npz
+        size: 15658056
+        sha256: 24970a05d0e9068b39a02494cad18292813cbf91db11dd3d821e0f1c433b2d07
+      - recording_id: sub-20190929-05_ses-20190929_ophys
+        path: work/results/wormid_extent/features/sub-20190929-05_ses-20190929_ophys.npz
+        size: 16251043
+        sha256: 15c7df74d6a2462d4d34ec4623179cde68c957fe3e2ec3b3de87437300686508
+      - recording_id: sub-20190929-07_ses-20190929_ophys
+        path: work/results/wormid_extent/features/sub-20190929-07_ses-20190929_ophys.npz
+        size: 17011661
+        sha256: 919de03d6c8547ed6a8e3b78fcd75ea90eb0d0616731903bd6669dda0310ab0e
+      - recording_id: sub-20191030-07_ses-20191030_ophys
+        path: work/results/wormid_extent/features/sub-20191030-07_ses-20191030_ophys.npz
+        size: 16808449
+        sha256: 9ac1ac571297b52b3a96aa38158497b5a809df20856b61ebd1df361092519127

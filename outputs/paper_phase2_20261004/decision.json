@@ -1,0 +1,22 @@
+{
+  "blockers": [
+    "The reviewed closest literature does not establish a distinct new-method contribution.",
+    "No credible independently verified, previously unused multi-animal external route is established."
+  ],
+  "credible_external_route": false,
+  "decision": "conditional_followup_on_robust_development_lesson",
+  "distinct_novelty_supported": false,
+  "empirical_lesson": "The equal-animal dual-anchor advantage over the fixed stronger CPD-reference comparator meets the prespecified accuracy/continuity criterion and survives every prespecified acquisition-date and seeded-frame sensitivity. This is a reproducible matched-input development observation, not a new tracking principle or independent biological validation.",
+  "execution_complete": true,
+  "historical_discrepancy_status": "closed_unresolved_historical_discrepancy",
+  "historical_exact_recovery_required": false,
+  "independent_confirmation_completed": false,
+  "interpretation": "Automated feasibility triage only; a complete comparison or positive development result does not establish publishability.",
+  "matched_tree_versus_beam_control_is_prior_art": true,
+  "mechanism_practical_gate_passed": false,
+  "primary_practical_gate_passed": true,
+  "publication_ready": false,
+  "robust_primary_development_lesson": true,
+  "sensitivity_judgment": "Requiring every sensitivity gate for the robust-development label is a conservative follow-up judgment, not an additional prespecified primary-screen requirement.",
+  "source_signature": "903c64ebaf9d58706d1633b9c7a45af7592e5121138a9091feba73415fbf3e68"
+}

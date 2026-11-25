@@ -1,0 +1,20 @@
+dataset:
+  path: work/data/fDNC_assets/extracted/test_tracking/real_jeff_all
+  ordering: numeric_frame_id
+  coordinate_units: released_normalized_xyz
+  negative_labels: evaluation_ignore
+
+tracking:
+  methods:
+    - nearest
+    - hungarian
+    - affine_hungarian
+  max_distance: 0.15
+  affine_iterations: 4
+  affine_trim_fraction: 0.70
+  affine_ridge_toward_identity: 0.03
+
+evaluation:
+  pairwise: adjacent_available_volume_link_precision_recall_f1
+  temporal: global_partial_idf1
+  labels_used_for_tracking: false

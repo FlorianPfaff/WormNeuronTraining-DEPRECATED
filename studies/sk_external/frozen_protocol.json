@@ -1,0 +1,170 @@
+{
+  "animals": {
+    "SK1_20230322_185704": {
+      "frames": 1500,
+      "n_rois": 118,
+      "nominal_hz": 1.04,
+      "seed": 20260721,
+      "spacing_xyz_um": [
+        0.3208,
+        0.3208,
+        2.5
+      ]
+    },
+    "SK1_20230322_201650": {
+      "frames": 1500,
+      "n_rois": 117,
+      "nominal_hz": 1.04,
+      "seed": 20261721,
+      "spacing_xyz_um": [
+        0.3208,
+        0.3208,
+        2.5
+      ]
+    },
+    "SK1_20230506_150145": {
+      "frames": 1500,
+      "n_rois": 93,
+      "nominal_hz": 1.04,
+      "seed": 20262721,
+      "spacing_xyz_um": [
+        0.1604,
+        0.1604,
+        3.0
+      ]
+    },
+    "SK1_20230506_153351": {
+      "frames": 1500,
+      "n_rois": 103,
+      "nominal_hz": 1.04,
+      "seed": 20263721,
+      "spacing_xyz_um": [
+        0.1604,
+        0.1604,
+        3.0
+      ]
+    },
+    "SK2_20220426_w00": {
+      "frames": 3000,
+      "n_rois": 121,
+      "nominal_hz": 3.3,
+      "seed": 20264721,
+      "spacing_xyz_um": [
+        0.3208,
+        0.3208,
+        1.5
+      ]
+    },
+    "SK2_20220426_w01": {
+      "frames": 3000,
+      "n_rois": 140,
+      "nominal_hz": 3.3,
+      "seed": 20265721,
+      "spacing_xyz_um": [
+        0.3208,
+        0.3208,
+        1.5
+      ]
+    }
+  },
+  "created_utc": "2026-11-24T23:48:57.769139+00:00",
+  "endpoints": "Primary accuracy includes initialized frame. Switch rate per 1000 adjacent track-transition opportunities. Duration is mean consecutive wrong scans per episode including terminal episodes. Summarize with equal animal weight.",
+  "geometry": {
+    "affine_huber_delta": 2.5,
+    "affine_iterations": 6,
+    "affine_max_scale": 1.4,
+    "affine_min_scale": 0.7,
+    "affine_ridge": 0.2,
+    "descriptor_quantiles": 32,
+    "descriptor_weight": 0.0,
+    "reference_weight": 6.0,
+    "spatial_scale_floor_um": 0.1
+  },
+  "historical_source_hashes": {
+    "configs/paper_phase2.yaml": "fac04ffe4498687f62963b211398e2d3d021b8b0a4b82c4345b0bbb53b84d67f",
+    "configs/wormid_prospective.yaml": "fdca2e18c61bcb3544106c4cd14e0945be789e6818ecd5e8904d9990c3b42bf0",
+    "src/deformeot/__init__.py": "7c63d7fb95e290d78bd5a3de506a9b310e621d7b4754acea4010be5779aec539",
+    "src/deformeot/calibration.py": "2bde02ea6e6b3cd66b6c006ba904f084002202b7e5301e3e6f5a8c9bbf5fd020",
+    "src/deformeot/cli.py": "2beeddcb4ebf3fe85f895c83b6ef4f6eb0976ca78531c83e8c90e12b3868df15",
+    "src/deformeot/data.py": "74dc54961b6237f82a7060292142611f06279e03eb75aee138097aa7a07fc57f",
+    "src/deformeot/downstream.py": "6b265cb919a40771316d79c11b490349f0af981f150dfbe4b88724d88ae53372",
+    "src/deformeot/fdnc.py": "c1dfd68f9d5d760c1bba74fb84851fd97d4936d099986a5866177b835de768ec",
+    "src/deformeot/metrics.py": "e2819723939d6003083883b9d9075d300de485647ac79ca78d05a3b8c850393b",
+    "src/deformeot/paper_phase2.py": "1962ee50918aa29bdbd087bca5e61a22c85d303e6c40eece9152c854e190193b",
+    "src/deformeot/paper_phase2_evidence.py": "1715d07555634f7927be0402269d786383e07cd775973989f51111ff2f063ced",
+    "src/deformeot/paper_phase2_mechanism.py": "2993f8d23bb5806e1b94bc2f3b798318e0f0bc8c12fc1c94aad5b1608ddaf333",
+    "src/deformeot/paper_phase2_package.py": "32d26202551739e3335f0538372c344f9ccfe8aec67a7294085bb226640e45c2",
+    "src/deformeot/paper_phase2_report.py": "d27364ef5f97b40847ce33a68d14cd23eab06213bb64748182fae75a32ac57cc",
+    "src/deformeot/paper_phase2_rescore.py": "c218cb9527475906590c4839a9998ee0e8883eeb9b7f190dd6eea81ac08b95e4",
+    "src/deformeot/paper_pilot.py": "3bd058d74d771f7239ce4311ad0fcc0a5d9350c8c0d18c8b2c35cb93dca1edff",
+    "src/deformeot/paper_pilot_audit.py": "9cb1529e7093bff36ac82a2be0cc7ef1ac57563850cea3a053ada801f1cd7d0e",
+    "src/deformeot/paper_pilot_baselines.py": "bae245b3425b1cc9e793f7d69c8e939b3f0c84609442a929a4f6f3aa2c4d79f5",
+    "src/deformeot/paper_pilot_inventory.py": "795559c2ce5fa27e426310e25f5c36b9f1194eef2cc16d93c541aa83ee3068b6",
+    "src/deformeot/paper_pilot_report.py": "566efd944eabc7309e7d1b7422950ade8ccc678d7f31b798d123a3be2e4cc9d2",
+    "src/deformeot/targettrack.py": "51c689227866c4bfd933ad96876d6dbfd9c618355c67e7ece832ef8d490a61be",
+    "src/deformeot/tracker.py": "4fe25d04aa0942e61a63474e6b54b73098bbd40958113143d0e67d832bf172dd",
+    "src/deformeot/wormid.py": "5155e8a1fd720086634f8cd97cf29a63e1ac5f12a891e035fd007db487ef070e",
+    "src/deformeot/wormid_benchmark.py": "2a74404d56d12aa8032fe1ff1e7f0b165db9c2d906bdbe43ba21dd200b339b62",
+    "src/deformeot/wormid_calibration.py": "aab9d98f19c7eb4249a6a5a1dc6a18c6e4ad3b2d3265d2180917ef2b5a4bd18f",
+    "src/deformeot/wormid_dandi.py": "71ef0d1f6f2e239102b7ba03e11b5ab741e516df5ad9e248c95b97d6fb5d43c3",
+    "src/deformeot/wormid_density_sensitivity.py": "975aab851b702c7cd2db3553e3da7cc68cfbd08cc517f14db433a551574431d1",
+    "src/deformeot/wormid_extent.py": "d4154c8d6f2bd9c4891808bd94fdafa7a0d1b42e8cd5f19ff823aa9d395e992f",
+    "src/deformeot/wormid_extent_components.py": "5768f7f707568c33fe8bde512786e0318f6ca7bce26a38db24ad9d83b850e2f9",
+    "src/deformeot/wormid_fdnc.py": "e1da79e9387c2e0f5ca111edb4e305853d091c837945ffa2662dbd365291fc81",
+    "src/deformeot/wormid_prospective.py": "b958990aa1c80b765208b5e2b116892f4cef708ec83deccde9a3a32cf3a945b4",
+    "src/deformeot/wormid_pyrecest_experiment.py": "fda050ff91dcf26eebc921ac8923b7df7fdd908a871c04241d364a1718b2159c",
+    "src/deformeot/wormid_pyrecest_gnn.py": "2edbffe77113e8a066f66fa6f576dc59d0f1fc0fb324790d56b2a919d2124af5",
+    "src/deformeot/wormid_pyrecest_mht.py": "e640ce4441926fbc53bf415dc511f467d2bce6b666c6d7b070c7c6d7c75cc2b7",
+    "src/deformeot/wormid_report.py": "6e959ebee3367b65fff8cb2d6106588f351f0e46fbb07836a5d6085b9b781ef8",
+    "src/deformeot/wormid_switch_strata.py": "20171434bceb26ce85d8bfef5b2a0c8a8a0b559b90473a64ec029b75b11b6b23",
+    "src/deformeot/wormid_tune.py": "d8297d4d952af5b01f8d69614c80a0fb9a8fd4580da60e5689a852f9762f2373"
+  },
+  "historical_source_signature": "903c64ebaf9d58706d1633b9c7a45af7592e5121138a9091feba73415fbf3e68",
+  "methods": {
+    "cpd_reference": {
+      "anchor": "reference",
+      "config": {
+        "alpha": 10.0,
+        "beta": 4.0,
+        "max_iterations": 100,
+        "tolerance": 1e-05,
+        "w": 0.0
+      },
+      "method": "cpd",
+      "name": "cpd_reference",
+      "order": 10
+    },
+    "dual_anchor": {
+      "method": "dual_anchor",
+      "name": "dual_anchor"
+    }
+  },
+  "packages": {
+    "PyYAML": "6.0.3",
+    "h5py": "3.16.0",
+    "numpy": "2.2.6",
+    "pycpd": "2.0.0",
+    "scipy": "1.17.1"
+  },
+  "protocol_sha256": "fdca2e18c61bcb3544106c4cd14e0945be789e6818ecd5e8904d9990c3b42bf0",
+  "pycpd_source_hashes": {
+    "__init__.py": "0af1cbe983469c25c1d0bbd27166589a0ec99213af84964a8e74afe2bca1634d",
+    "affine_registration.py": "4e5901d9d0a09b0b05643aec87cdf8f2bb7fae9e1b3cabb747b79e5efa26d9fb",
+    "deformable_registration.py": "4539447f97aba8b915e2d217cc91f90162dc7881691987bbef5545168933cd2f",
+    "emregistration.py": "2e38344ba59e6cccbfe3276a7edd6c91b493cc15a5f318087ce4d514102b6132",
+    "rigid_registration.py": "c54839b23f7eaa40c72d2acf0e57f9e5fe28035f8fb7fb60fe131b00c59d589c",
+    "utility.py": "48cec0d50c4544910fe25497414abf535ef7bfe2022a2eb2b0899759ea54a864"
+  },
+  "replication_direction": "For the observed three-way pattern, compare equal-animal means for higher accuracy, lower switch rate and longer wrong episodes under dual anchoring. Preserve the original practical accuracy/switch screen separately. If no wrong episodes, report duration as undefined biologically and flag historical zero encoding.",
+  "runner_sha256": "c61a655c77bda165cf3a4c8064ac2d7cc1d5517e1eadd06bf578397793dbf631",
+  "seed_rule": "20260720 + 1000 * zero_based_sorted_SK_inventory_index + 1",
+  "selection_sha256": "633c6f3f403614abc014d85f032df41f3aa57a95957626d2082e1e0d5793b4fa",
+  "single_thread_env": {
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "stride": 1
+}

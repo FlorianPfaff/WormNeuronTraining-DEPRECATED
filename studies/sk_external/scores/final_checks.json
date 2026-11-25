@@ -1,0 +1,66 @@
+{
+  "input_manifest_sha256": "be7faa1b498282b0825ba37150e2509e0bf47dc36e585afc1aaad52f10eb3807",
+  "protocol_sha256": "1f667a474941ef440650f9b1a38351249fa72ea4eeecb45eaf01a55d8b7762d0",
+  "by_animal": {
+    "SK1_20230322_185704": {
+      "input_sha256": "d161da948e3f3ba686798599297d8af3af4c101876abef5560d92363882d1f6b",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 1499,
+      "tracker_seconds": {
+        "dual_anchor": 4.07001676998334,
+        "cpd_reference": 14.687934890971519
+      }
+    },
+    "SK1_20230322_201650": {
+      "input_sha256": "2393811c47687489380cc631cd2301bcf6e7513e756adaa1c75083df4ca9fa92",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 1499,
+      "tracker_seconds": {
+        "dual_anchor": 4.0224854400148615,
+        "cpd_reference": 14.808205698034726
+      }
+    },
+    "SK1_20230506_150145": {
+      "input_sha256": "8a7dbd5a4c9adbbe5fa483b4d24f070a6a33126e4795fac5e211fa425eb09636",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 1499,
+      "tracker_seconds": {
+        "dual_anchor": 3.3292311700060964,
+        "cpd_reference": 9.578997930977494
+      }
+    },
+    "SK1_20230506_153351": {
+      "input_sha256": "75fe94891735b855df056e00219f41eea9d2ad6bda30a17b7cd9bae08c9baf46",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 1499,
+      "tracker_seconds": {
+        "dual_anchor": 3.5692556930007413,
+        "cpd_reference": 11.442360456043389
+      }
+    },
+    "SK2_20220426_w00": {
+      "input_sha256": "e94d43a80d4e4c61e44165affa298148dd4cd502b11705ff130bd0afcf76c056",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 2999,
+      "tracker_seconds": {
+        "dual_anchor": 8.380760342988651,
+        "cpd_reference": 31.85893886303529
+      }
+    },
+    "SK2_20220426_w01": {
+      "input_sha256": "63ad1a836a567a75aca5e415e559df35bd5051e889dda2a3fb14e43b10816cea",
+      "truth_permutations_reconstructed": true,
+      "methods_identical_assignments": true,
+      "transitions_with_changed_anonymous_row_order": 2999,
+      "tracker_seconds": {
+        "dual_anchor": 9.72308821300976,
+        "cpd_reference": 37.912463932996616
+      }
+    }
+  }
+}

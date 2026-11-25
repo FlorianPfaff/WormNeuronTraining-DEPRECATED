@@ -1,0 +1,55 @@
+schema_version: 1
+experiment: paper_phase2_20261004
+interpretation: previously_examined_development_data_not_external_confirmation
+original_protocol: configs/wormid_prospective.yaml
+pyrecest_selection: work/results/pyrecest_followup_20261002/selection.json
+limits:
+  cumulative_job_seconds: 86400
+  mechanism_job_seconds: 43200
+  additional_storage_bytes: 10737418240
+  storage_headroom_bytes: 536870912
+  workers: 3
+  threads_per_worker: 1
+  task_timeout_seconds: 7200
+  evidence_timeout_seconds: 7200
+  max_adapter_repair_cycles: 2
+  initial_inspection_charge_seconds: 600
+cpd:
+  alpha: [2.0, 5.0, 10.0]
+  beta: [1.0, 2.0, 4.0, 8.0]
+  anchors: [reference, temporal]
+  strides: [1, 10, 40]
+  w: 0.0
+  max_iterations: 100
+  tolerance: 0.00001
+  selection: highest_equal_stride_accuracy_then_lowest_switch_rate_then_configuration_order
+fdnc:
+  checkpoint: work/data/fDNC_assets/model.bin
+  checkpoint_sha256: ab529eb6a886cb6ab3f199b7aaa4e49b82562dc280b3ac736ed61e25d5138ec9
+  source: work/data/fDNC_Neuron_ID/src
+  device: cpu
+  batch_size: 32
+mechanism:
+  recordings:
+    - sub-20190924-03_ses-20190924_ophys
+    - sub-20190928-08_ses-20190928_ophys
+    - sub-20191104-10_ses-20191104_ophys
+  median_motion_recording: sub-20190928-08_ses-20190928_ophys
+  strides: [1, 10]
+  modes: [dual_anchor, online, rolling_best_path, beam_best_path, beam_marginal]
+  timing_modes: [dual_anchor, rolling_best_path, beam_best_path, beam_marginal]
+  timing_repeats: 2
+  primary: beam_marginal
+  comparator: rolling_best_path
+  minimum_native_accuracy_gain: 0.0025
+  minimum_positive_animals: 2
+analysis:
+  bootstrap_samples: 20000
+  bootstrap_seed: 20261004
+  primary_comparator: cpd_reference
+  candidate: dual_anchor
+  minimum_switch_reduction_fraction: 0.25
+  maximum_accuracy_loss: 0.0025
+  acquisition_date_sensitivity: leave_one_date_out_and_date_cluster_bootstrap
+  initialization: seeded_all_frame_primary_with_excluding_seed_sensitivity
+  external_test_outcomes_scored: false

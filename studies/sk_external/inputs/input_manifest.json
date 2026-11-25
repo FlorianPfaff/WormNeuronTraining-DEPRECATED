@@ -1,0 +1,326 @@
+{
+  "schema": "wha-sk-coordinate-inputs-v1",
+  "host": "workstation2",
+  "source_converter": "https://github.com/focolab/NWBelegans/blob/74e976ac80c38facd396dadbf2f35d913dd0ed6d/NWB_convert.py",
+  "reference": "Persistent author-supplied Kato NWB ROI IDs. Source tracking was algorithm-assisted. Individual expert-checked frames are not identified.",
+  "selection": "All original rows and frames in the six inventoried SK1/SK2 NWBs, with no outcome or anatomical-name filtering.",
+  "geometry": "Source compound x, y, z times imaging-volume-linked grid spacing in micrometres; no origin shift, axis permutation, or registration.",
+  "time_axis": "Frame index divided by NWB nominal rate plus NWB starting time in seconds.",
+  "checks": "All frame keys consecutive; same IDs in original order for every frame; one in-bounds finite integer center with weight 1 per ROI per frame; no all-zero centers. Native DANDI NWB timestamps, calibration, subject and coordinate/ID tables at first, middle and last frame exact-checked against LINDI for each subject. All NPZ arrays round-trip checked.",
+  "array_repr": "points, times and spacing_xyz_um float64; roi_ids int64. Array SHA256 calculated on contiguous little-endian C-order bytes.",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.2.6",
+    "h5py": "3.16.0",
+    "numcodecs": "0.16.3"
+  },
+  "extraction_script_sha256": "6aa9e4633743add610342128db6e369e551d12b67056167678616b064036f636",
+  "recordings": [
+    {
+      "id": "SK1_20230322_185704",
+      "family": "SK1",
+      "subject_id": "20230322-18-57-04",
+      "asset_uuid": "3523d059-5d5c-4767-ac50-28cdbdb7ee25",
+      "dandiset_version": "0.241009.1504",
+      "dandiset_id": "000565",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/assets/3523d059-5d5c-4767-ac50-28cdbdb7ee25/",
+      "nwb_path": "sub-20230322-18-57-04/sub-20230322-18-57-04_ses-20230322T185704_ophys.nwb",
+      "nwb_bytes": 4286413036,
+      "dandi_reported_nwb_sha256": "8719e6365dae1088f5635ebc2384cd6ea0392b43d580ce95257885caac0579c9",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000565/assets/3523d059-5d5c-4767-ac50-28cdbdb7ee25/nwb.lindi.json",
+      "lindi_json_sha256": "0524fbf9e0a2c7f8625d2ede922496c6b88538fb7810c504f11ed3db0c75b556",
+      "frames_zero_based_inclusive": [
+        0,
+        1499
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        117
+      ],
+      "xyz_spacing_um": [
+        0.3208,
+        0.3208,
+        2.5
+      ],
+      "rate_hz": 1.04,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 1441.3461538461538,
+      "points_shape": [
+        1500,
+        118,
+        3
+      ],
+      "named_roi_count": 25,
+      "named_roi_count_with_question_mark": 0,
+      "native_nwb_spot_checked_frames": [
+        0,
+        750,
+        1499
+      ],
+      "native_range_bytes": 393216,
+      "npz": "SK1_20230322_185704.npz",
+      "output_sha256": "d161da948e3f3ba686798599297d8af3af4c101876abef5560d92363882d1f6b",
+      "arrays_sha256": {
+        "points": "9d5d34fa1e7dc32b0b613397d8ace10372b73a8f0df2416f344476a691f2438d",
+        "times": "9b3a81055dd4526e7bf9a5265811414d500a923fe358672c17dc0a3ec1924907",
+        "roi_ids": "c79a8014bfd7bc5eb2b7973b0ec2a49aaebb516cdbcbd7dbf21edadb02e3a4b5",
+        "spacing_xyz_um": "036f4fa3023bd270bfe8091fef16ccab24bf3ea2bc79f4f0d9ecbe37f7e12053"
+      }
+    },
+    {
+      "id": "SK1_20230322_201650",
+      "family": "SK1",
+      "subject_id": "20230322-20-16-50",
+      "asset_uuid": "36715c41-aa5c-4a05-affd-66a9a6089f7f",
+      "dandiset_version": "0.241009.1504",
+      "dandiset_id": "000565",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/assets/36715c41-aa5c-4a05-affd-66a9a6089f7f/",
+      "nwb_path": "sub-20230322-20-16-50/sub-20230322-20-16-50_ses-20230322T201650_ophys.nwb",
+      "nwb_bytes": 4293448011,
+      "dandi_reported_nwb_sha256": "f442901c12bb3430cbbe09969e1cb0b6775e1bd33b68a0d668389ab0a78772d1",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000565/assets/36715c41-aa5c-4a05-affd-66a9a6089f7f/nwb.lindi.json",
+      "lindi_json_sha256": "9c53f7f1201ee98ac57159c5aa4ca8948ccaf597d8f8279a6405f0a21ed63bd6",
+      "frames_zero_based_inclusive": [
+        0,
+        1499
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        116
+      ],
+      "xyz_spacing_um": [
+        0.3208,
+        0.3208,
+        2.5
+      ],
+      "rate_hz": 1.04,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 1441.3461538461538,
+      "points_shape": [
+        1500,
+        117,
+        3
+      ],
+      "named_roi_count": 31,
+      "named_roi_count_with_question_mark": 0,
+      "native_nwb_spot_checked_frames": [
+        0,
+        750,
+        1499
+      ],
+      "native_range_bytes": 458752,
+      "npz": "SK1_20230322_201650.npz",
+      "output_sha256": "2393811c47687489380cc631cd2301bcf6e7513e756adaa1c75083df4ca9fa92",
+      "arrays_sha256": {
+        "points": "669ef7db84878f418c4049899b0bdb6b194866e20691da9d07d5dc726d177bb5",
+        "times": "9b3a81055dd4526e7bf9a5265811414d500a923fe358672c17dc0a3ec1924907",
+        "roi_ids": "eeb2a320d10c36185230ca303ebd6f03afcb8184b0506ec878ed2be7ebc8a563",
+        "spacing_xyz_um": "036f4fa3023bd270bfe8091fef16ccab24bf3ea2bc79f4f0d9ecbe37f7e12053"
+      }
+    },
+    {
+      "id": "SK1_20230506_150145",
+      "family": "SK1",
+      "subject_id": "20230506-15-01-45",
+      "asset_uuid": "64d4ce85-1c87-4444-8758-61bb20d6dabc",
+      "dandiset_version": "0.241009.1504",
+      "dandiset_id": "000565",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/assets/64d4ce85-1c87-4444-8758-61bb20d6dabc/",
+      "nwb_path": "sub-20230506-15-01-45/sub-20230506-15-01-45_ses-20230506T150145_ophys.nwb",
+      "nwb_bytes": 13787450925,
+      "dandi_reported_nwb_sha256": "c0af9f34dc4cb702bc8e98103f0e1bb5bbfc33a1d15444336bf3908fb4c1298b",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000565/assets/64d4ce85-1c87-4444-8758-61bb20d6dabc/nwb.lindi.json",
+      "lindi_json_sha256": "f752388d49821e50c2f5d3dd9433f0addbe061ee79074582ed6bcde5ec65ddad",
+      "frames_zero_based_inclusive": [
+        0,
+        1499
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        92
+      ],
+      "xyz_spacing_um": [
+        0.1604,
+        0.1604,
+        3.0
+      ],
+      "rate_hz": 1.04,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 1441.3461538461538,
+      "points_shape": [
+        1500,
+        93,
+        3
+      ],
+      "named_roi_count": 23,
+      "named_roi_count_with_question_mark": 0,
+      "native_nwb_spot_checked_frames": [
+        0,
+        750,
+        1499
+      ],
+      "native_range_bytes": 425984,
+      "npz": "SK1_20230506_150145.npz",
+      "output_sha256": "8a7dbd5a4c9adbbe5fa483b4d24f070a6a33126e4795fac5e211fa425eb09636",
+      "arrays_sha256": {
+        "points": "9d7cf805904319dc7d113b4b82465b2df2883fd182c148ff7c91e5ce91e50a56",
+        "times": "9b3a81055dd4526e7bf9a5265811414d500a923fe358672c17dc0a3ec1924907",
+        "roi_ids": "b920435dc92d94cad16595b6e28f7c0b656d36846f8eb8baa33ef8e5cff9006e",
+        "spacing_xyz_um": "b5ed8bee6c040116d972b8154039a72dbfb6934ff2373c3aeba35c5339fb3c20"
+      }
+    },
+    {
+      "id": "SK1_20230506_153351",
+      "family": "SK1",
+      "subject_id": "20230506-15-33-51",
+      "asset_uuid": "bde173ba-5801-4008-baee-8d30b6341586",
+      "dandiset_version": "0.241009.1504",
+      "dandiset_id": "000565",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/assets/bde173ba-5801-4008-baee-8d30b6341586/",
+      "nwb_path": "sub-20230506-15-33-51/sub-20230506-15-33-51_ses-20230506T153351_ophys.nwb",
+      "nwb_bytes": 13794410997,
+      "dandi_reported_nwb_sha256": "3e072af75a24211c3ae3935fe25e107da4704b72fd195c04d00b5557129ca4d6",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000565/assets/bde173ba-5801-4008-baee-8d30b6341586/nwb.lindi.json",
+      "lindi_json_sha256": "7185ae63b5cf803eafc5a7e636c248c83df6ab9343f90d05311361ead8fd7d50",
+      "frames_zero_based_inclusive": [
+        0,
+        1499
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        102
+      ],
+      "xyz_spacing_um": [
+        0.1604,
+        0.1604,
+        3.0
+      ],
+      "rate_hz": 1.04,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 1441.3461538461538,
+      "points_shape": [
+        1500,
+        103,
+        3
+      ],
+      "named_roi_count": 29,
+      "named_roi_count_with_question_mark": 1,
+      "native_nwb_spot_checked_frames": [
+        0,
+        750,
+        1499
+      ],
+      "native_range_bytes": 376832,
+      "npz": "SK1_20230506_153351.npz",
+      "output_sha256": "75fe94891735b855df056e00219f41eea9d2ad6bda30a17b7cd9bae08c9baf46",
+      "arrays_sha256": {
+        "points": "dcb5842b1fdfb0652acef26133219e51d86d7542771607a674ee5c6d23884f8c",
+        "times": "9b3a81055dd4526e7bf9a5265811414d500a923fe358672c17dc0a3ec1924907",
+        "roi_ids": "6ab6c03348fcb8290bf7fa6e7d79146bee284b947ee5c85449b47c81e14d31e0",
+        "spacing_xyz_um": "b5ed8bee6c040116d972b8154039a72dbfb6934ff2373c3aeba35c5339fb3c20"
+      }
+    },
+    {
+      "id": "SK2_20220426_w00",
+      "family": "SK2",
+      "subject_id": "2022-04-26-w00-NP1",
+      "asset_uuid": "6d7709d2-0ae0-430c-ba4d-c7800496259f",
+      "dandiset_version": "0.241009.1502",
+      "dandiset_id": "000472",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000472/versions/0.241009.1502/assets/6d7709d2-0ae0-430c-ba4d-c7800496259f/",
+      "nwb_path": "sub-2022-04-26-w00-NP1/sub-2022-04-26-w00-NP1_ses-20220426_ophys.nwb",
+      "nwb_bytes": 8337835906,
+      "dandi_reported_nwb_sha256": "4f2f42bb16b0e11798000dba58ada3ae9c9316fa618e24f208577fe7ec54e577",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000472/assets/6d7709d2-0ae0-430c-ba4d-c7800496259f/nwb.lindi.json",
+      "lindi_json_sha256": "8903f9249c4993637dc55d639e583c087e7e1caf150f714f9bcfd21c972e35ec",
+      "frames_zero_based_inclusive": [
+        0,
+        2999
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        120
+      ],
+      "xyz_spacing_um": [
+        0.3208,
+        0.3208,
+        1.5
+      ],
+      "rate_hz": 3.3,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 908.7878787878789,
+      "points_shape": [
+        3000,
+        121,
+        3
+      ],
+      "named_roi_count": 21,
+      "named_roi_count_with_question_mark": 11,
+      "native_nwb_spot_checked_frames": [
+        0,
+        1500,
+        2999
+      ],
+      "native_range_bytes": 507904,
+      "npz": "SK2_20220426_w00.npz",
+      "output_sha256": "e94d43a80d4e4c61e44165affa298148dd4cd502b11705ff130bd0afcf76c056",
+      "arrays_sha256": {
+        "points": "122ffbae2577f83f0532d5a324f6e9e109b4fedd0413fe051c8bf5a019f0475b",
+        "times": "5dfa4c39715f04e7a0899b9ec3fb17f4378b0e3324f46048dc0e78eafe6111c2",
+        "roi_ids": "c87ae5102566e33999e168cf9023679dd3609b61036ec85300dbb564da91e2e0",
+        "spacing_xyz_um": "9f614fadf22dea9cb6454c3c93d852252781501b910f093f6b183841bf9e0781"
+      }
+    },
+    {
+      "id": "SK2_20220426_w01",
+      "family": "SK2",
+      "subject_id": "2022-04-26-w01-NP1",
+      "asset_uuid": "8525ab3c-4a5d-4893-a2c8-4ac7ccbd87bd",
+      "dandiset_version": "0.241009.1502",
+      "dandiset_id": "000472",
+      "asset_metadata_url": "https://api.dandiarchive.org/api/dandisets/000472/versions/0.241009.1502/assets/8525ab3c-4a5d-4893-a2c8-4ac7ccbd87bd/",
+      "nwb_path": "sub-2022-04-26-w01-NP1/sub-2022-04-26-w01-NP1_ses-20220426_ophys.nwb",
+      "nwb_bytes": 8412993256,
+      "dandi_reported_nwb_sha256": "66e4243260b2de7d545711dad1d51e57d2c81f00c3ab85436387fc28895d99ab",
+      "lindi_url": "https://lindi.neurosift.org/dandi/dandisets/000472/assets/8525ab3c-4a5d-4893-a2c8-4ac7ccbd87bd/nwb.lindi.json",
+      "lindi_json_sha256": "fc39285a40ba04f5bddf2982c024f25ff41732832ad076cfa16a0b8cb4b251e0",
+      "frames_zero_based_inclusive": [
+        0,
+        2999
+      ],
+      "roi_ids_zero_based_inclusive": [
+        0,
+        139
+      ],
+      "xyz_spacing_um": [
+        0.3208,
+        0.3208,
+        1.5
+      ],
+      "rate_hz": 3.3,
+      "time_start_s": 0.0,
+      "last_nominal_time_s": 908.7878787878789,
+      "points_shape": [
+        3000,
+        140,
+        3
+      ],
+      "named_roi_count": 32,
+      "named_roi_count_with_question_mark": 9,
+      "native_nwb_spot_checked_frames": [
+        0,
+        1500,
+        2999
+      ],
+      "native_range_bytes": 524288,
+      "npz": "SK2_20220426_w01.npz",
+      "output_sha256": "63ad1a836a567a75aca5e415e559df35bd5051e889dda2a3fb14e43b10816cea",
+      "arrays_sha256": {
+        "points": "17e61e079ac1719f6ebd38e9d11e85a61a08e39c2459887cda542eaf48ac8940",
+        "times": "5dfa4c39715f04e7a0899b9ec3fb17f4378b0e3324f46048dc0e78eafe6111c2",
+        "roi_ids": "a103a53f219cde44e3628ccf636c012fb99435a924ae2e947a3f04db437d03d0",
+        "spacing_xyz_um": "9f614fadf22dea9cb6454c3c93d852252781501b910f093f6b183841bf9e0781"
+      }
+    }
+  ]
+}

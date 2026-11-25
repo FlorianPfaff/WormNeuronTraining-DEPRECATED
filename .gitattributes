@@ -1,0 +1,4 @@
+* text=auto eol=lf
+# Keep the original bytes for checksummed experiment artifacts.
+*.csv -text
+studies/sk_external/inputs/extract_sk.py -text

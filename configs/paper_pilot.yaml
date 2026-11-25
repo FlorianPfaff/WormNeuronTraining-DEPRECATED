@@ -1,0 +1,40 @@
+schema_version: 1
+experiment: paper_pilot_20261003
+interpretation: exploratory_bounded_development_pilot_not_independent_confirmation
+original_protocol: configs/wormid_prospective.yaml
+pyrecest_selection: work/results/pyrecest_followup_20261002/selection.json
+limits:
+  cumulative_job_seconds: 86400
+  additional_storage_bytes: 10737418240
+  workers: 4
+  threads_per_worker: 1
+  task_timeout_seconds: 10800
+  max_adapter_repair_cycles: 2
+selection:
+  motion_statistic: median_symmetric_nearest_neighbor_displacement_native_rate
+  ranks: [minimum, lower_median, maximum]
+  exclude_original_tuning: true
+  tie_break: recording_id
+strides: [1, 10, 40]
+cpd:
+  package: pycpd
+  version: 2.0.0
+  alpha: [2.0, 5.0]
+  beta: [1.0, 2.0, 4.0]
+  w: 0.0
+  max_iterations: 100
+  tolerance: 0.00001
+  anchors: [reference, temporal]
+  selection: highest_equal_stride_accuracy_then_lowest_switch_rate_then_configuration_order
+fdnc:
+  checkpoint: work/data/fDNC_assets/model.bin
+  checkpoint_sha256: ab529eb6a886cb6ab3f199b7aaa4e49b82562dc280b3ac736ed61e25d5138ec9
+  source: work/data/fDNC_Neuron_ID/src
+  device: cpu
+  batch_size: 32
+screen:
+  primary_stride: 1
+  minimum_switch_reduction_fraction: 0.25
+  maximum_accuracy_loss: 0.0025
+  primary_comparator: highest_mean_native_accuracy_then_lowest_switch_rate_then_name
+  no_formal_inference_from_three_selected_development_recordings: true

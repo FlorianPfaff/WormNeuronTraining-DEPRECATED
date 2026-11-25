@@ -1,0 +1,264 @@
+schema_version: 1
+reviewed_on: '2026-10-04'
+scope: public_compact_asset_evidence_only
+limits:
+  max_seconds: 7200
+  max_total_bytes: 536870912
+  max_asset_bytes: 33554432
+  max_member_bytes: 33554432
+  request_timeout_seconds: 30
+  max_json_bytes: 2097152
+  range_block_bytes: 65536
+  cache_blocks: 128
+eligibility_policy:
+  intended_use: independent_external_temporal_identity_evaluation
+  require_complete_coverage_within_declared_validation_scope: true
+  require_documented_temporal_identity_semantics: true
+  require_documented_expert_reference_verification: true
+  allow_algorithm_assisted_expert_verified_references: true
+  allowed_validation_scopes: [dense_all_frames_all_rois, sparse_documented_subset]
+  require_physical_calibration_and_time: true
+  require_resolved_training_overlap: comparator_specific
+  comparator_profiles:
+    untrained_geometry_mht: No pretrained weights; unrelated fDNC/3DeeCellTracker training-overlap unknowns do not block this route.
+    pretrained_fdnc: Resolve overlap for the exact fDNC checkpoint before claiming an independent pretrained comparison.
+    pretrained_three_dee: Resolve segmentation/checkpoint training and distinguish reference-output dependence from documented expert correction.
+  alias_policy: Review known aliases against the project exposure ledger; record the bounded search and its unresolved cross-release identifiers. Do not claim universal proof that no aliases exist.
+  note: Algorithm-assisted labels with documented expert verification may be eligible within the verified scope. A mapped sparse expert-verified subset supports sparse validation only, not a dense-reference claim. Stable rows or generic community methods alone do not verify any particular asset. Independence concerns prior experiment exposure and overlap, not a requirement that every coordinate was originally drawn by hand.
+reference_identity:
+  classification: algorithm_assisted_expert_verified_reference_trajectories
+  independent_framewise_manual_ground_truth_confirmed: false
+  source_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11840940/
+  retrieved_on: '2026-10-03'
+  claim: Community methods describe algorithmic neuron-center tracking followed by expert verification. This is a source-level provenance statement; applying it to a specific asset or frame subset requires an explicit source linkage. Blinded independent adjudication is not established.
+project_exposure:
+  reviewed_on: '2026-10-04'
+  local_sources: [docs/paper_readiness_plan.md, docs/results_audit.md, configs/paper_pilot_inventory.yaml]
+  known_exposed: [EY, NeRVE, fDNC_examples, Targettrack_examples, ASCENT_examples]
+  interpretation: Prior experiment exposure differs from metadata-only inspection. No non-EY SK/KK tracking score was found in the reviewed ledger; universal absence and cross-release animal aliases remain unproved.
+related_work:
+  scope: Ten closest primary method/benchmark papers; unknowns are explicit and this bounded comparison does not prove universal novelty.
+  papers:
+    - id: nerve
+      title: Automatically tracking neurons in a moving and deforming brain
+      url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005517
+      retrieved_on: '2026-10-04'
+      demonstrated: Non-rigid reference-volume correspondence and time-independent identity clustering in moving adult worms.
+      implication: Deformation correction, reference anchors, and neuron tracking are prior art; dual-anchor geometry alone is not a first-use claim.
+      anchoring: Multiple reference volumes sampled throughout recording.
+      deformation: Straightening, non-rigid registration, and thin-plate-spline correction.
+      future_frame_access: Whole-recording reference construction and clustering; not a fixed-lag online method.
+      hypothesis_retention: Registration feature vectors and clusters, not a retained temporal assignment bank.
+      annotation_requirements: Automated pipeline; human/reference comparisons used for evaluation.
+      evaluation_scope: Adult freely moving worms; image-derived detection and longitudinal tracking.
+    - id: fdnc
+      title: Fast deep neural correspondence for tracking and identifying neurons in C. elegans using semi-synthetic training
+      url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8367385/
+      retrieved_on: '2026-10-04'
+      demonstrated: Learned point-cloud correspondence from semi-synthetic training, including temporal neuron matching.
+      implication: Pairwise learned correspondence is an important baseline, not a full retained temporal identity posterior.
+      anchoring: Template point cloud paired with a target point cloud.
+      deformation: Semi-synthetic deformation during training; learned correspondence.
+      future_frame_access: Pairwise inference; temporal information access depends on chosen template schedule.
+      hypothesis_retention: Correspondence scores; no maintained temporal assignment bank demonstrated.
+      annotation_requirements: Semi-synthetic correspondence training; labeled evaluation matches.
+      evaluation_scope: Neuron tracking and cross-animal identification, including NeRVE recordings.
+    - id: zephir
+      title: Versatile multiple object tracking in sparse 2D/3D videos via deformable image registration
+      url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012075
+      retrieved_on: '2026-10-04'
+      demonstrated: Annotation-guided deformable image registration, spring constraints, and reference-frame selection in moving worms.
+      implication: Reference constraints and deformable multi-object tracking are established; sparse manually verified keypoints must not be described as all-frame manual labels for every neuron.
+      anchoring: Annotated reference frames plus optional partial annotations.
+      deformation: Local image registration with inter-keypoint spring constraints.
+      future_frame_access: Reference selection and registration order can use the recording; not a matched fixed-lag online claim.
+      hypothesis_retention: Optimization of keypoint positions, not a discrete temporal assignment beam.
+      annotation_requirements: Manual reference annotations; optional verified partial tracks.
+      evaluation_scope: Sparse keypoints in 2D/3D videos, including freely moving adult worms.
+    - id: three_dee
+      title: 3DeeCellTracker, a deep learning-based pipeline for segmenting and tracking cells in 3D time lapse images
+      url: https://elifesciences.org/articles/59187
+      retrieved_on: '2026-10-04'
+      demonstrated: Segmentation, feedforward correspondence, PR-GLS, initial manual correction, and ensemble reference tracking.
+      implication: Multiple references and neural-cell tracking predate this project. KK outputs generated by this method require documented expert correction before serving as a reference for that same method.
+      anchoring: Initial corrected segmentation; previous/reference volumes in ensemble mode.
+      deformation: Feedforward correspondence and PR-GLS point-set transformation.
+      future_frame_access: Sequential reference tracking; exact look-ahead restriction not established in this review.
+      hypothesis_retention: Ensemble reference estimates, not a scored temporal assignment beam.
+      annotation_requirements: Initial corrected labels and segmentation training; subsequent checking differs by dataset.
+      evaluation_scope: Worm neurons and other 3D cell recordings; detects and tracks cells.
+    - id: targettrack
+      title: Automated neuron tracking inside moving and deforming C. elegans using deep learning and targeted augmentation
+      url: https://www.nature.com/articles/s41592-023-02096-3
+      retrieved_on: '2026-10-04'
+      demonstrated: Targeted augmentation supplies synthetic annotations for learned 3D neuron segmentation and tracking.
+      implication: Volumetric shape exploitation is prior art; this does not itself establish a dynamic random-matrix extent posterior.
+      anchoring: Selected manually annotated training frames.
+      deformation: Targeted augmentation and learned image segmentation.
+      future_frame_access: Recording-wide training-frame selection; no matched fixed-lag restriction established.
+      hypothesis_retention: Learned segmentation/identity predictions, not an explicit temporal assignment bank.
+      annotation_requirements: Few manual annotations followed by augmentation and optional proofreading.
+      evaluation_scope: 3D adult-worm neuron tracking with point or volumetric annotations.
+    - id: brainalignnet
+      title: Deep neural networks to register and annotate cells in moving and deforming nervous systems
+      url: https://elifesciences.org/articles/108159/figures
+      retrieved_on: '2026-10-04'
+      demonstrated: Learned dense non-rigid image registration and neuron correspondence in freely moving adult worms.
+      implication: Registration and ROI linkage accuracy must not be compared to this project's initialized-cohort score without matched data and definitions.
+      version: Version of Record 2026-02-17; DOI 10.7554/eLife.108159.2
+      anchoring: Fixed/moving image pairs and downstream ROI linkage.
+      deformation: Learned dense displacement fields after rigid alignment.
+      future_frame_access: Image-pair registration and pipeline-level clustering; fixed-lag access not established.
+      hypothesis_retention: Similarity-based ROI linkage; no discrete temporal history bank demonstrated.
+      annotation_requirements: Matched centroid supervision and registration training data.
+      evaluation_scope: Freely moving adult worms and transfer to jellyfish; registration/linking metrics.
+    - id: mhht
+      title: Multiple Hypothesis Hypergraph Tracking for Posture Identification in Embryonic Caenorhabditis elegans
+      url: https://arxiv.org/html/2111.06425v2
+      retrieved_on: '2026-10-04'
+      demonstrated: Ranked-assignment trees with depth-first look-ahead search and a K-best retained-hypothesis alternative; correlated seam-cell motion.
+      implication: Sections 1.3 and 4.1.3 directly precede rolling-tree versus bounded-beam comparisons; neither search mechanism is new here.
+      version: arXiv method manuscript v2, 2022-07-09; not labeled a separate peer-reviewed method paper.
+      anchoring: Previously committed cell states.
+      deformation: Relational posture/motion models.
+      future_frame_access: Explicit N-frame deferred decisions.
+      hypothesis_retention: Exponential admitted tree or K-best retained hypotheses.
+      annotation_requirements: Annotated posture data for learned models and evaluation.
+      evaluation_scope: Embryonic seam cells, not adult whole-brain neurons.
+    - id: emc2
+      title: Tracking calcium dynamics from individual neurons in behaving animals
+      url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1009432
+      retrieved_on: '2026-10-04'
+      demonstrated: eMHT tracklets, thin-plate-spline elastic motion correction, and global gap concatenation in Hydra and mouse imaging.
+      implication: Combining biological MHT, deformation correction, and gap closing is prior art; a distinct posterior or empirical benefit must be shown.
+      anchoring: Tracklet endpoints and detected-neuron displacement correspondences.
+      deformation: Thin-plate-spline elastic field estimated from tracklets.
+      future_frame_access: Multiframe eMHT and forward/backward global tracklet concatenation.
+      hypothesis_retention: eMHT alternatives within tracklets; stitching is a separate optimization.
+      annotation_requirements: Spot detection plus manually validated tracks for evaluation.
+      evaluation_scope: Behaving Hydra and mouse calcium imaging; variable visibility and gap closing.
+    - id: paul
+      title: How To Make Your Cell Tracker Say I dunno!
+      url: https://openaccess.thecvf.com/content/ICCV2025/html/Paul_How_To_Make_Your_Cell_Tracker_Say_I_dunno_ICCV_2025_paper.html
+      retrieved_on: '2026-10-04'
+      demonstrated: Assignment alternatives and post-hoc calibrated uncertainty for several linear-assignment cell trackers.
+      implication: Cell-tracking uncertainty and calibration are established; library use or multiple hypotheses alone cannot support novelty or calibration claims.
+      anchoring: Generic frame-pair tracking costs supplied by underlying tracker.
+      deformation: Depends on underlying tracker; no specific worm deformation model.
+      future_frame_access: Frame-pair uncertainty model; input tracker may use additional context.
+      hypothesis_retention: Assignment alternatives for marginal uncertainty, not a persistent multiframe history bank.
+      annotation_requirements: Tracking labels for calibration/evaluation; underlying tracker may need training.
+      evaluation_scope: Cell-tracking uncertainty across multiple linear-assignment trackers.
+    - id: wormid_bench
+      title: WormID-Bench, A Benchmark for Whole-Brain Activity Extraction in C. elegans
+      url: https://doi.org/10.1101/2025.01.06.631621
+      retrieved_on: '2026-10-03'
+      inspected: Version-4 citation metadata and previously retrieved local primary text work/notes/wormid_bench.txt; current publisher-page retrieval was unavailable.
+      demonstrated: Multilaboratory detection, semantic identification, and temporal tracking benchmark; point-reference tracking evaluation uses DET/TRA.
+      implication: Resource reuse is not an independent dataset contribution; initialized-cohort identity accuracy is not directly comparable to end-to-end DET/TRA.
+      anchoring: Baseline-dependent; this is a benchmark rather than one anchoring mechanism.
+      deformation: Varying recorded worm motion and baseline-dependent registration.
+      future_frame_access: Baseline-dependent; no universal matched fixed-lag rule established.
+      hypothesis_retention: Baseline-dependent; no new posterior mechanism claimed.
+      annotation_requirements: Curated community point references; asset-level temporal verification must be checked separately.
+      evaluation_scope: 118 source worms; temporal tracking subset reported as 36 videos, distinct from structural identification samples.
+  claims:
+    - claim: First use of multitarget tracking or MHT in neuroscience or C. elegans
+      verdict: contradicted_by_prior_work
+      sources: [mhht, emc2, zephir, three_dee]
+    - claim: First use of deformation or reference anchors for neuron tracking
+      verdict: contradicted_by_prior_work
+      sources: [nerve, fdnc, zephir, three_dee, brainalignnet]
+    - claim: Calibrated uncertainty is novel or follows automatically from PyRecEst
+      verdict: unsupported_and_prior_art_exists
+      sources: [paul]
+    - claim: Bounded look-ahead, ranked-assignment tree search, or beam retention is a new biological tracking mechanism
+      verdict: contradicted_by_prior_work
+      sources: [mhht, emc2]
+    - claim: A dynamic extent posterior improves the present benchmark
+      verdict: not_established_by_current_point_trajectory_evidence
+      sources: [targettrack, nerve]
+    - claim: A specific frozen dual-anchor and probabilistic-association combination improves independent external neuron identity tracking
+      verdict: testable_narrow_hypothesis_not_yet_demonstrated
+      sources: [nerve, zephir, emc2, paul, wormid_bench]
+    - claim: Improved initialized-cohort reference agreement establishes end-to-end tracking or independent biological truth
+      verdict: unsupported_metric_and_reference_scope_mismatch
+      sources: [wormid_bench, three_dee, zephir]
+  mechanism_interpretation:
+    novelty_verdict: distinct_new_mechanism_not_established
+    rolling_vs_online: Tests added bounded future-frame access with exhaustive search within the admitted tree; not novelty.
+    beam_best_vs_rolling: Tests consequences of bounded pruning and retained path support under the same lag; information access is matched but explored paths and compute are not identical.
+    beam_marginal_vs_best: Tests whole-permutation marginal-mass versus best-path commitment on the same native beam; later trajectories may diverge after commitments.
+    positive_result_scope: Practical benefit of this specified geometry/scoring/pruning/commitment combination on examined data; not proof of a new tracking principle, calibrated posterior, or independent external generalization.
+dandisets:
+  SK1:
+    id: '000565'
+    version: '0.241009.1504'
+    source_url: https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/
+    retrieved_on: '2026-10-03'
+    annotation_provenance: Community methods report algorithm-assisted expert verification in general, and SK1 has partial semantic labels; direct attribution of temporal verification to each asset/subset remains unverified.
+  SK2:
+    id: '000472'
+    version: '0.241009.1502'
+    source_url: https://api.dandiarchive.org/api/dandisets/000472/versions/0.241009.1502/
+    retrieved_on: '2026-10-03'
+    annotation_provenance: Archive description emphasizes structural labels, while pinned benchmark flags two calcium recordings; resolve actual asset schema.
+  KK:
+    id: '000692'
+    version: '0.240402.2118'
+    source_url: https://api.dandiarchive.org/api/dandisets/000692/versions/0.240402.2118/
+    retrieved_on: '2026-10-03'
+    annotation_provenance: Archive explicitly attributes segmentation and tracking to 3DeeCellTracker and warns of transient failures. NeuroPAL AutoID/manual corrections concern semantic labels; independent temporal corrections are not established.
+candidate_selection:
+  source_url: https://github.com/focolab/WormND/blob/0c74e9ddffee138cfc6330ab65c0e690e8e199dd/neuron_tracking/3deecelltracker/dataset_split.csv
+  retrieved_on: '2026-10-03'
+  criterion: Exactly six SK calcium-task candidates first, followed by nine KK candidates; no selection using external tracker scores.
+candidates:
+  - {id: SK1_20230322_185704, family: SK1, path: sub-20230322-18-57-04/sub-20230322-18-57-04_ses-20230322T185704_ophys.nwb}
+  - {id: SK1_20230322_201650, family: SK1, path: sub-20230322-20-16-50/sub-20230322-20-16-50_ses-20230322T201650_ophys.nwb}
+  - {id: SK1_20230506_150145, family: SK1, path: sub-20230506-15-01-45/sub-20230506-15-01-45_ses-20230506T150145_ophys.nwb}
+  - {id: SK1_20230506_153351, family: SK1, path: sub-20230506-15-33-51/sub-20230506-15-33-51_ses-20230506T153351_ophys.nwb}
+  - {id: SK2_20220426_w00, family: SK2, path: sub-2022-04-26-w00-NP1/sub-2022-04-26-w00-NP1_ses-20220426_ophys.nwb}
+  - {id: SK2_20220426_w01, family: SK2, path: sub-2022-04-26-w01-NP1/sub-2022-04-26-w01-NP1_ses-20220426_ophys.nwb}
+  - {id: KK_2308918_01, family: KK, path: sub-2308918-01/sub-2308918-01_ses-20230918T095400_ophys.nwb}
+  - {id: KK_2308918_03, family: KK, path: sub-2308918-03/sub-2308918-03_ses-20230918T132100_ophys.nwb}
+  - {id: KK_2308918_04, family: KK, path: sub-2308918-04/sub-2308918-04_ses-20230918T172100_ophys.nwb}
+  - {id: KK_230928_02, family: KK, path: sub-230928-02/sub-230928-02_ses-20230928T111400_ophys.nwb}
+  - {id: KK_230928_03, family: KK, path: sub-230928-03/sub-230928-03_ses-20230928T142700_ophys.nwb}
+  - {id: KK_230928_04, family: KK, path: sub-230928-04/sub-230928-04_ses-20230928T160000_ophys.nwb}
+  - {id: KK_231013_01, family: KK, path: sub-231013-01/sub-231013-01_ses-20231013T093000_ophys.nwb}
+  - {id: KK_231013_02, family: KK, path: sub-231013-02/sub-231013-02_ses-20231013T111100_ophys.nwb}
+  - {id: KK_231013_03, family: KK, path: sub-231013-03/sub-231013-03_ses-20231013T132800_ophys.nwb}
+zephir:
+  id: zephir_ZM9624
+  record_url: https://zenodo.org/api/records/10818810
+  archive_url: https://zenodo.org/api/records/10818810/files/zephir%20supplementary%20data.zip/content
+  archive_size: 14869755504
+  prefix: zephir/ZM9624_Ex(myo-20_mCherry)/
+  retrieved_on: '2026-10-03'
+  aliases: [ZM9624_Ex(myo-20_mCherry), ZephIR_new_worm]
+  excluded_aliases: [nguyen2017_AL_w1, churchland_CSHL049_2020_01_20_001]
+  identity_schema_url: https://github.com/venkatachalamlab/ZephIR/blob/2842342b039c3aed8dab3b96b3ac0708e950e5b7/zephir/annotator/data/annotations_io.py
+  known_provenance_codes: {}
+  unresolved_codes_note: Release NEIR must not be equated to current code ZEIR without release-specific evidence; user initials do not independently prove manual annotation.
+  manual_subset_source: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012075
+  sparse_validation_route:
+    status: conditional_until_release_rows_are_mapped
+    paper_verified_scope: Ten neurons were corrected or verified across every frame and then classified as manual annotations; their starting tracks were algorithm-generated.
+    missing_release_link: Inspected Zenodo 1.0 description does not map those ten neurons to worldline IDs or provenance codes. Current annotator documentation permits changing provenance strings and is not an exact-release verification log.
+    allowed_if_resolved: Expert-verified sparse-neuron temporal validation, with the mapped IDs/frames frozen before scoring; never imply every released trajectory is verified.
+    source_url: https://zenodo.org/records/10818810
+    retrieved_on: '2026-10-04'
+  paper_reported_rate_hz: 4
+  paper_rate_is_not_asset_timestamp_verification: true
+three_dee:
+  listing_url: https://api.osf.io/v2/nodes/pgr95/files/osfstorage/
+  node_url: https://api.osf.io/v2/nodes/pgr95/
+  license_url: https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e96a/
+  retrieved_on: '2026-10-03'
+  paper_url: https://elifesciences.org/articles/59187
+  archives:
+    - {id: three_dee_worm1, filename: worm1.zip, aliases: [worm1, worm_1a_or_1b_unresolved], prior_exposure: not_found_in_project_ledger}
+    - {id: three_dee_worm4, filename: worm4.zip, aliases: [worm4, Nguyen_NeRVE], prior_exposure: known_exposed_alias}
+  allowed_compact_extensions: [.csv, .json, .yaml, .yml, .txt, .md]
+  note: Read ZIP directories and compact textual metadata only; never model weights, pickle, image arrays, TIFF stacks, or archive-wide extracts. Output coordinates without independent correction provenance remain algorithm outputs.

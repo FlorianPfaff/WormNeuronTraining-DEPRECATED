@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deformeot"
+version = "0.1.0"
+description = "Dual-anchor initialized-cohort tracking for deforming neural microscopy"
+requires-python = ">=3.10"
+dependencies = [
+  "fsspec[http]>=2026.6",
+  "h5py>=3.11",
+  "matplotlib>=3.9",
+  "networkx>=3.3",
+  "numpy>=1.26,<2.3",
+  "pandas>=2.2",
+  "PyYAML>=6.0",
+  "scikit-learn>=1.5",
+  "scipy>=1.14",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.8"]
+paper = ["Pillow>=12", "pypdf>=6", "reportlab>=5"]
+pyrecest = [
+  "pyrecest @ git+https://github.com/FlorianPfaff/PyRecEst.git@7eff44c5f4d62c54a8394270fc924cb1302f171b",
+]
+
+[project.scripts]
+deformeot = "deformeot.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

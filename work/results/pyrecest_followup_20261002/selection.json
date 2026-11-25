@@ -1,0 +1,188 @@
+{
+  "global_winner": "gnn_kalman",
+  "implementation_signature": "db7d67cdaec817c7371add0d06a6c2500d1083331e4b45f491f909ebb34ab01a",
+  "leaderboard": [
+    {
+      "candidate": "gnn_kalman",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "mode": "kalman"
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "gnn",
+      "mean_identity_accuracy": 0.9029173124004028,
+      "mean_identity_switch_rate": 0.048060720226067256,
+      "method": "pyrecest_gnn",
+      "runtime_seconds": 55.169325987808406
+    },
+    {
+      "candidate": "gnn_equivalence_control",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "mode": "equivalence"
+      },
+      "control": true,
+      "expected_tasks": 5,
+      "family": "control",
+      "mean_identity_accuracy": 0.90087536990453,
+      "mean_identity_switch_rate": 0.04704366797648994,
+      "method": "pyrecest_gnn",
+      "runtime_seconds": 55.44937183195725
+    },
+    {
+      "candidate": "gnn_velocity",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "local_velocity_weight": 0.5,
+        "mode": "kalman"
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "gnn",
+      "mean_identity_accuracy": 0.9006976059290034,
+      "mean_identity_switch_rate": 0.04812827946758728,
+      "method": "pyrecest_gnn",
+      "runtime_seconds": 54.82683515967801
+    },
+    {
+      "candidate": "mht_geometry_online",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "fixed_lag": 0,
+        "hypotheses_per_parent": 3,
+        "max_global_hypotheses": 4,
+        "max_measurements_per_track": 5,
+        "use_gaussian_cost": false
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "mht_online",
+      "mean_identity_accuracy": 0.8995550141324287,
+      "mean_identity_switch_rate": 0.04830680916640647,
+      "method": "pyrecest_mht",
+      "runtime_seconds": 130.97519376222044
+    },
+    {
+      "candidate": "gnn_adaptive_covariance",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "adaptive_process_noise": 0.1,
+        "mode": "kalman"
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "gnn",
+      "mean_identity_accuracy": 0.8982847044008668,
+      "mean_identity_switch_rate": 0.0479018832882652,
+      "method": "pyrecest_gnn",
+      "runtime_seconds": 58.94036555336788
+    },
+    {
+      "candidate": "mht_geometry_lag2",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "fixed_lag": 2,
+        "hypotheses_per_parent": 3,
+        "max_global_hypotheses": 4,
+        "max_measurements_per_track": 5,
+        "use_gaussian_cost": false
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "mht_lag2",
+      "mean_identity_accuracy": 0.8976321011438826,
+      "mean_identity_switch_rate": 0.04853406448768629,
+      "method": "pyrecest_mht",
+      "runtime_seconds": 413.175730146002
+    },
+    {
+      "candidate": "gnn_smoothing",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "measurement_noise_um": 0.75,
+        "mode": "kalman",
+        "process_noise_um": 0.35
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "gnn",
+      "mean_identity_accuracy": 0.8890164842337166,
+      "mean_identity_switch_rate": 0.06327729641281231,
+      "method": "pyrecest_gnn",
+      "runtime_seconds": 55.04331890074536
+    },
+    {
+      "candidate": "mht_gaussian_lag2",
+      "complete": true,
+      "completed_tasks": 5,
+      "config": {
+        "fixed_lag": 2,
+        "hypotheses_per_parent": 3,
+        "max_global_hypotheses": 4,
+        "max_measurements_per_track": 5,
+        "use_gaussian_cost": true
+      },
+      "control": false,
+      "expected_tasks": 5,
+      "family": "mht_lag2",
+      "mean_identity_accuracy": 0.8857539058588871,
+      "mean_identity_switch_rate": 0.05702462693601503,
+      "method": "pyrecest_mht",
+      "runtime_seconds": 411.777294698637
+    }
+  ],
+  "protocol_sha256": "b0379dbf8f4f8552474720d6d694260187722b31c67832fe45dca7a183a64a00",
+  "schema_version": 1,
+  "selected_candidates": [
+    {
+      "config": {
+        "mode": "kalman"
+      },
+      "family": "gnn",
+      "method": "pyrecest_gnn",
+      "name": "gnn_kalman"
+    },
+    {
+      "config": {
+        "fixed_lag": 0,
+        "hypotheses_per_parent": 3,
+        "max_global_hypotheses": 4,
+        "max_measurements_per_track": 5,
+        "use_gaussian_cost": false
+      },
+      "family": "mht_online",
+      "method": "pyrecest_mht",
+      "name": "mht_geometry_online"
+    },
+    {
+      "config": {
+        "fixed_lag": 2,
+        "hypotheses_per_parent": 3,
+        "max_global_hypotheses": 4,
+        "max_measurements_per_track": 5,
+        "use_gaussian_cost": false
+      },
+      "family": "mht_lag2",
+      "method": "pyrecest_mht",
+      "name": "mht_geometry_lag2"
+    }
+  ],
+  "selection_recording": "sub-20190925-04_ses-20190925_ophys",
+  "selection_rule": "highest equal-stride mean identity accuracy; ties: lowest mean switch rate, lowest runtime, lexicographic name",
+  "selection_uses_evaluation_outcomes": false,
+  "strides": [
+    1,
+    5,
+    10,
+    20,
+    40
+  ]
+}

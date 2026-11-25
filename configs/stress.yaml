@@ -1,0 +1,10 @@
+simulation:
+  seed: 20260720
+  gap_lengths: [1, 2, 3, 5, 10]
+  miss_probabilities: [0.0, 0.05, 0.1, 0.2]
+  false_positives_per_frame: [0, 5, 15]
+  localization_noise_um: [0.0, 0.5, 1.0, 2.0]
+  repetitions: 20
+evaluation:
+  distance_threshold_um: 5.0
+

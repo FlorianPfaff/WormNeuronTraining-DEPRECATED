@@ -1,0 +1,49 @@
+schema_version: 1
+audit_date: "2026-10-04"
+audit_kind: one_bounded_read_only_existing_artifact_search
+status: closed_unresolved_historical_discrepancy
+scope:
+  workspace_only: true
+  numerical_jobs_launched: false
+  source_or_historical_files_modified: false
+  broad_home_or_remote_archive_search: false
+  searched_directories: [outputs/paper, work/results, docs, configs]
+  inspected_archive: outputs/paper/reproduction-bundle.tar.gz
+  inspected_records:
+    - outputs/paper/reproduction-manifest.json
+    - outputs/paper/environment.txt
+    - outputs/paper/source-results/prospective.json
+    - work/results/wormid_prospective_expansion.json
+    - work/results/wormid_reference_benchmark.json
+    - scripts/build_reproduction_bundle.py
+    - src/deformeot/wormid_prospective.py
+    - work/results/fdnc_anchor_scores.npz
+findings:
+  actual_july_wormid_assignment_arrays_found: false
+  original_aggregate_results_found: true
+  original_source_manifest_found: true
+  original_environment_record_found: true
+  original_python: "3.10.12"
+  original_platform: Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+  original_numpy: "2.2.6"
+  original_scipy: "1.15.3"
+  original_blas_dispatch_and_thread_configuration_found: false
+  reproduction_bundle_contains_wormid_assignment_npz: false
+  reproduction_builder_explicitly_excludes_npz: true
+  original_wormid_outputs: aggregate_metrics_not_per_frame_assignment_traces
+excluded_as_nonhistorical_evidence:
+  - path: work/results/paper_pilot_20261003/audit
+    reason: October current and reconstructed-runtime reruns; not July execution arrays.
+  - path: work/results/paper_pilot_20261003/execution_source.tar.gz
+    reason: October execution source archive, not July assignment evidence.
+  - path: work/results/fdnc_anchor_scores.npz
+    reason: fDNC score/position/label cache; archive members do not include July WormID baseline assignment traces.
+  - path: work/results/wormid_extent/features
+    reason: Extent feature caches, not baseline association histories.
+decision:
+  stop_historical_cause_hunting: true
+  claim_historical_discrepancy_solved: false
+  infer_ties_or_dependency_cause: false
+  require_exact_july_recovery_before_new_study: false
+  historical_results_remain_preserved_and_qualified: true
+  new_study_requirement: Freeze and archive new assignments, inputs, provenance, and independent rescoring; already examined recordings remain development evidence.

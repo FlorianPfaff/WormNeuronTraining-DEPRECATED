@@ -1,0 +1,248 @@
+schema_version: 1
+reviewed_on: '2026-10-03'
+scope: public_metadata_and_compact_annotations_only
+external_cohort_status: conditional
+retrieval_audit:
+  calculation_host: gpuserver6000
+  public_metadata_annotation_jobs: 5
+  remote_execution: Python programs supplied on SSH standard input; no script files created.
+  remote_persisted_download_paths: []
+  remote_persisted_download_bytes: 0
+  external_remaining_copies: 0
+  exact_wall_seconds: null
+  conservative_budget_charge_seconds: 1200
+  wall_time_qualification: Exact total was not instrumented; 1200 seconds is a conservative accounting estimate, not a measured duration.
+  known_annotation_compressed_bytes_requested: 4464722
+  zip_tail_bytes_requested: 131072
+  transfer_limitations: Additional bounded ZIP headers/padding and small public JSON/XML/source metadata were read. Total HTTP bytes were not instrumented. Per-entry range padding was at most 1 KiB and could include adjacent archive bytes; no image array or video was decoded.
+evidence:
+  wormid_community:
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11840940/
+    retrieved_on: '2026-10-03'
+    inspected: STAR Methods data acquisition and Table 1; publisher full text and Europe PMC XML.
+  ey_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000541/versions/0.241009.1457/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and assets listing; no image payloads.
+  kk_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000692/versions/0.240402.2118/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and all nine asset paths.
+  sk1_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000565/versions/0.241009.1504/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and all 21 asset paths.
+  sk2_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000472/versions/0.241009.1502/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and all ten asset paths.
+  sf_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000776/versions/0.241009.1509/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and all 38 asset paths.
+  hl_archive:
+    url: https://api.dandiarchive.org/api/dandisets/000714/versions/0.241009.1516/
+    retrieved_on: '2026-10-03'
+    inspected: Version metadata and nine distinct subject paths.
+  wormnd_split:
+    url: https://github.com/focolab/WormND/blob/0c74e9ddffee138cfc6330ab65c0e690e8e199dd/neuron_tracking/3deecelltracker/dataset_split.csv
+    retrieved_on: '2026-10-03'
+    inspected: Pinned official table; use_for_calcium_task flags and distinct subject identifiers.
+  wormnd_loader:
+    url: https://github.com/focolab/WormND/blob/0c74e9ddffee138cfc6330ab65c0e690e8e199dd/neuron_tracking/3deecelltracker/dataloader.py
+    retrieved_on: '2026-10-03'
+    inspected: CalciumImageSeries, segmentation variants, and separate SF annotation dependency.
+  wormid_benchmark:
+    url: https://doi.org/10.1101/2025.01.06.631621
+    retrieved_on: '2026-10-03'
+    inspected: Previously retrieved paper text work/notes/wormid_bench.txt; Tables 1 and tracking methods. Version-specific counts retained as reported, not assumed to replace archive metadata.
+  zephir_paper:
+    url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1012075
+    retrieved_on: '2026-10-03'
+    inspected: Crawling-worm results, manual verification workflow, Fig. 3 and feature-detection training.
+  zephir_record:
+    url: https://zenodo.org/api/records/10818810
+    retrieved_on: '2026-10-03'
+    inspected: Dataset version 1.0 metadata; CC-BY-4.0 and 14869755504-byte ZIP.
+  zephir_archive:
+    url: https://zenodo.org/api/records/10818810/files/zephir%20supplementary%20data.zip/content
+    retrieved_on: '2026-10-03'
+    inspected: HTTP206 byte ranges on gpuserver6000; 131072-byte ZIP tail and new-worm metadata/worldlines/annotations entries. No image arrays or videos decoded; bounded header/padding overread may include adjacent archive bytes.
+    archive_md5_declared_by_zenodo: 9ae1c3262f4fd89300a7a92e18b9b4fe
+    annotation_entry: zephir/ZM9624_Ex(myo-20_mCherry)/annotations.h5
+    annotation_sha256: a8b91f55ce566146ab7cc75f5f1c32bc5e83cc080fa3d64caa165a28e0fd0456
+  zephir_schema:
+    url: https://github.com/venkatachalamlab/ZephIR/blob/2842342b039c3aed8dab3b96b3ac0708e950e5b7/zephir/annotator/data/annotations_io.py
+    retrieved_on: '2026-10-03'
+    inspected: Annotation schema fields t_idx, worldline_id, x/y/z normalized to (0,1), provenance.
+  three_dee_paper:
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8009680/
+    retrieved_on: '2026-10-03'
+    inspected: Data availability, worm dataset descriptions and manual checks; Europe PMC full-text XML also read.
+  three_dee_repo:
+    url: https://github.com/WenChentao/3DeeCellTracker
+    retrieved_on: '2026-10-03'
+    inspected: Official README links to OSF StarDist and U-Net demonstration data and models.
+  three_dee_osf:
+    url: https://api.osf.io/v2/nodes/pgr95/files/osfstorage/
+    retrieved_on: '2026-10-03'
+    inspected: Complete five-file listing, sizes and download links; no archives downloaded.
+  three_dee_unet:
+    url: https://api.osf.io/v2/nodes/dt76c/files/osfstorage/
+    retrieved_on: '2026-10-03'
+    inspected: Three-file listing retrieved after one request timeout.
+  three_dee_license:
+    url: https://api.osf.io/v2/licenses/563c1cf88c5e4a3877f9e96a/
+    retrieved_on: '2026-10-03'
+    inspected: License linked from OSF pgr95 node metadata; CC-BY-4.0.
+
+reference_identity:
+  classification: algorithm_assisted_expert_verified_reference_trajectories
+  independent_framewise_manual_ground_truth_confirmed: false
+  claims:
+    - id: ey_reference_production
+      topic: annotation_provenance
+      statement: The community acquisition methods describe algorithmic neuron-center tracking followed by expert manual verification. This supports curated reference trajectories; it does not establish independent manual annotation of every EY coordinate or identity transition.
+      evidence: [wormid_community, ey_archive]
+    - id: ey_roi_semantics
+      topic: identity_semantics
+      statement: The project scores persistent initialized ROI identities from stable NWB rows. Semantic NeuroPAL cell names and biological identity verification are distinct from these row identities. Conversion checks establish row continuity, not annotation correctness.
+      evidence: [ey_archive, wormnd_loader]
+      project_evidence_paths: [src/deformeot/wormid_dandi.py, src/deformeot/wormid.py, docs/results_audit.md]
+      interpretation: project_code_review
+    - id: ey_scope
+      topic: animal_count_and_setting
+      statement: The frozen EY release has 21 NWB assets with 21 distinct subject paths and CC-BY-4.0 licensing. Its description identifies microfluidic-chip and semi-immobilized recordings. All 21 were already exposed in this project.
+      evidence: [ey_archive]
+      project_evidence_paths: [configs/wormid_prospective.yaml, work/results/pyrecest_followup_20261002/selection.json, docs/paper_readiness_plan.md]
+    - id: ey_uncertainty
+      topic: unresolved_quality
+      statement: Per-frame annotator identities, correction histories, blinded duplicate annotation and an independent error audit were not established in this bounded review. Agreement with the supplied ROI trajectories must not be presented as independently verified biological ground truth.
+      evidence: [wormid_community, ey_archive]
+      interpretation: limitation_of_reviewed_evidence
+
+sources:
+  - id: wormid_non_ey
+    name: Previously unused non-EY WormID recordings
+    status: conditional
+    verified_eligible_new_animals: 0
+    published_temporal_candidate_count: 15
+    claims:
+      - id: non_ey_counts
+        topic: animal_counts
+        statement: Official archive listings contain KK 9, SK1 21, SK2 10, HL 9 and SF 38 distinct subject paths. The pinned benchmark table flags KK 9, SK1 4 and SK2 2 for calcium tracking, giving 15 candidate recordings. Archive subjects and fully labeled temporal test animals are different counts.
+        evidence: [kk_archive, sk1_archive, sk2_archive, hl_archive, sf_archive, wormnd_split]
+      - id: non_ey_sk_candidate_ids
+        topic: candidate_subject_identifiers
+        value:
+          SK1: [sub-20230322-18-57-04, sub-20230322-20-16-50, sub-20230506-15-01-45, sub-20230506-15-33-51]
+          SK2: [sub-2022-04-26-w00-NP1, sub-2022-04-26-w01-NP1]
+        statement: These six distinct SK subject identifiers have calcium-task flags in the pinned benchmark table. Their individual NWB time-series schemas and reference-label quality remain unverified here.
+        evidence: [wormnd_split]
+      - id: non_ey_label_quality
+        topic: temporal_labels
+        statement: KK metadata explicitly attributes segmentation/tracking to 3DeeCellTracker and warns of transient tracking failures. SK1 has calcium data only in a subset and about 30-50% semantic cell-ID coverage. SK2 archive metadata describes structural NeuroPAL labels despite two calcium-task flags in the benchmark; this discrepancy requires per-file inspection.
+        evidence: [kk_archive, sk1_archive, sk2_archive, wormnd_split]
+      - id: non_ey_units_time
+        topic: units_and_time
+        statement: The benchmark reports image spacings in micrometers and average temporal lengths KK 1646, SK1 1500 and SK2 3000 volumes. These are source-reported summaries, not a verified timing manifest. Read each file's imaging-volume spacing and timestamps/rate; do not apply EY calibration or assume constant frame rate across labs.
+        evidence: [wormid_benchmark, wormnd_loader]
+      - id: non_ey_registration_exclusions
+        topic: temporal_versus_static_labels
+        statement: HL is a structural-image resource. SF has 38 imaging recordings, but the reviewed benchmark excludes SF from tracking for insufficient extractable reference annotations; its loader expects a separate SF annotation path. Static cross-animal labels or registration pairs alone cannot establish longitudinal tracking accuracy.
+        evidence: [hl_archive, sf_archive, wormid_benchmark, wormnd_loader]
+      - id: non_ey_license
+        topic: license
+        statement: All five inspected non-EY DANDI versions declare CC-BY-4.0. Individual derivative annotations and model weights still need their own provenance records.
+        evidence: [kk_archive, sk1_archive, sk2_archive, hl_archive, sf_archive]
+      - id: non_ey_exposure_overlap
+        topic: prior_exposure_and_training_overlap
+        statement: Project records mark EY, Targettrack, fDNC/NeRVE and ASCENT examples as exposed; no non-EY WormID scoring result was found in the reviewed project ledger. This is provisional exposure status, not proof of universal absence. KK reference outputs depend on 3DeeCellTracker; pretrained worm1/worm3 and fDNC training-animal overlap require explicit reconciliation.
+        evidence: [kk_archive, wormnd_split, wormid_benchmark]
+        project_evidence_paths: [docs/paper_readiness_plan.md, docs/results_audit.md, work/results]
+        interpretation: project_ledger_review_and_unresolved_overlap
+
+  - id: zephir_public
+    name: Public ZephIR supplementary worm recordings
+    status: conditional
+    verified_eligible_new_animals: 0
+    archive_worm_recording_count: 2
+    apparently_new_worm_recording_count: 1
+    claims:
+      - id: zephir_animals
+        topic: animal_counts_and_prior_exposure
+        statement: The ZIP contains the new ZM9624_Ex(myo-20_mCherry) worm and nguyen2017_AL_w1, plus an unrelated mouse recording. The latter worm is the already exposed NeRVE source, so the release offers at most one apparently new worm for this project; it cannot alone establish multi-animal generalization.
+        evidence: [zephir_archive, zephir_paper]
+        project_evidence_paths: [docs/results_audit.md, docs/paper_readiness_plan.md]
+      - id: zephir_time_units
+        topic: units_and_time
+        statement: New-worm metadata gives 1060 frames, two channels and a 23x512x512 volume. The paper reports 4 Hz. Annotation coordinates use normalized x/y/z and integer t_idx; the retrieved metadata has no physical voxel spacing. Physical-distance comparisons need calibration before eligibility.
+        evidence: [zephir_archive, zephir_paper, zephir_schema]
+      - id: zephir_annotation_coverage
+        topic: compact_annotation_inventory
+        statement: The new-worm annotations file contains 188680 rows, 1060 distinct frames and 178 distinct worldline IDs, with 178 rows per frame. IDs span 0 to 178; zero is present and requires schema reconciliation because the current Worldline default uses ID 0 and name null. Its meaning in this release was not established.
+        evidence: [zephir_archive, zephir_schema]
+        observed_annotation_rows: 188680
+        observed_frame_count: 1060
+        observed_unique_worldline_count: 178
+        observed_provenance_row_counts:
+          ANTT: 218
+          JY: 11345
+          JY0: 1360
+          JY1: 555
+          NEIR: 173767
+          SG: 1435
+      - id: zephir_annotation_quality
+        topic: manual_versus_algorithm_labels
+        statement: The archive mixes six provenance codes whose complete semantics were not verified. The paper describes manual reference frames and correction/verification of ten neurons through the movie. Dense saved tracks therefore cannot all be assumed independently manual; a documented provenance-to-evaluation mask is required.
+        evidence: [zephir_archive, zephir_paper, zephir_schema]
+      - id: zephir_access_license
+        topic: access_and_license
+        statement: Zenodo version 1.0 declares CC-BY-4.0. Its 14869755504-byte ZIP supports HTTP206 ranges. Directory metadata and the 2232361-byte compressed annotation entry were read without loading image arrays; the uncompressed annotation SHA256 is recorded in the evidence catalog.
+        evidence: [zephir_record, zephir_archive]
+      - id: zephir_training_overlap
+        topic: pretrained_training_overlap
+        statement: The released new worm was used to develop/demonstrate ZephIR; reference annotations and optional feature-selector training are part of its workflow. Project exposure before this metadata review appears limited to code/literature, but overlap with any pretrained detector or fDNC weights is unresolved. New-to-project does not imply unseen by every baseline.
+        evidence: [zephir_paper, zephir_archive]
+        project_evidence_paths: [docs/literature_sources.md, work/vendor/ZephIR, docs/results_audit.md]
+        interpretation: project_ledger_review_and_unresolved_overlap
+
+  - id: three_dee_cell_tracker_public
+    name: Public 3DeeCellTracker worm data
+    status: conditional
+    verified_eligible_new_animals: 0
+    paper_named_worm_recordings: 5
+    directly_listed_demo_worm_archives: 2
+    claims:
+      - id: three_dee_animals
+        topic: animal_counts
+        statement: The paper names worm 1a, 1b, 2, 3 and 4. OSF StarDist demos list only worm1.zip and worm4.zip; U-Net demos similarly list single_mode_worm1.zip and ensemble_mode_worm4.zip. Five named paper recordings are not five verified new labeled animals, and aliases need reconciliation.
+        evidence: [three_dee_paper, three_dee_osf, three_dee_unet]
+      - id: three_dee_labels
+        topic: temporal_labels_and_annotation_quality
+        statement: These are 3D time-lapse tracking datasets, with first-volume manual segmentation correction and human checking of tracking in the paper. The metadata-only demo listing does not establish a downloadable independent dense identity-label table. Predicted tracks or segmentation-training masks must not be treated as independently checked temporal identities.
+        evidence: [three_dee_paper, three_dee_osf, three_dee_unet]
+      - id: three_dee_units
+        topic: units_and_time
+        statement: The sources use multiple microscopes and acquisition conditions. Per-archive voxel spacing, physical frame times, full duration and label coverage were not verified in this bounded inventory; these fields remain unknown instead of inheriting EY or ZephIR units.
+        evidence: [three_dee_paper, three_dee_repo]
+        interpretation: limitation_of_reviewed_evidence
+      - id: three_dee_files_license
+        topic: access_and_license
+        statement: OSF pgr95 declares CC-BY-4.0 and lists worm1.zip (118235281 bytes), worm4.zip (735099505), stardist_models.zip (20527023), ffn_models.zip (4185310), and worm1_stardist_training_data.zip (2450130). Data archives were not downloaded. The repository MIT license does not establish licensing of every historical SSBD source.
+        evidence: [three_dee_osf, three_dee_license, three_dee_repo]
+      - id: three_dee_exposure_overlap
+        topic: prior_exposure_and_training_overlap
+        statement: Paper worm4 reuses Nguyen/NeRVE and is already exposed in this project. Original worm1a/1b/2 and worm3 have SSBD sources, but exact equivalence to demos or non-EY WormID animals has not been reconciled. Supplied segmentation/FFN models and worm1 training data create explicit potential training overlap; none is certified unseen.
+        evidence: [three_dee_paper, three_dee_osf, three_dee_unet, wormid_benchmark]
+        project_evidence_paths: [docs/results_audit.md, docs/paper_readiness_plan.md]
+        interpretation: project_ledger_review_and_unresolved_overlap
+
+limitations:
+  - No external tracking method was run, no external test outcome was scored, and no new annotation or author contact occurred in this inventory.
+  - Zero new animals are fully verified eligible here. Conditional means public candidate sources exist but temporal-label quality, calibration, independence or training overlap still prevents an untouched multi-animal confirmation claim.
+  - Reference IDs, semantic neuron names, independently verified trajectories and algorithm-generated trajectories are different evidence classes.
+  - Subject filenames are provisional animal identifiers; duplicate recordings and cross-release aliases require reconciliation before counting animals.
+  - Known project exposure comes from the reviewed ledger and artifacts, not a complete audit of every prior interaction or every baseline's training set.
+  - Raw sequence availability was established from source metadata; image payloads were not downloaded or visually assessed.
+  - Registration pairs and structural labels are not temporal tracking ground truth; a single additional movie is a case study.

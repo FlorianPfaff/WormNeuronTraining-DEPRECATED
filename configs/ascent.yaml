@@ -1,0 +1,11 @@
+dataset:
+  gt_tracks: work/data/InHouse_Opterra_tracks_GT.csv
+  pred_tracks: work/data/InHouse_Opterra_tracks_PRED.csv
+  gt_detections: work/data/InHouse_Opterra_coords_GT.csv
+  pred_detections: work/data/InHouse_Opterra_coords_PRED.csv
+  spacing_zyx_um: [1.5, 0.243, 0.243]
+evaluation:
+  distance_threshold_um: 5.0
+  bootstrap_recordings: 0
+  seed: 20260720
+

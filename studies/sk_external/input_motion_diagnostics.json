@@ -1,0 +1,102 @@
+{
+  "definitions": {
+    "adjacent_identical_count": "Number of consecutive native frame pairs for which every coordinate of every ROI agrees exactly, using original input row order. Denominator is frames minus 1.",
+    "distinct_point_clouds": "Number of distinct multisets of exact coordinate triples among the native frames of this animal. Coordinate triples are sorted lexicographically before equality comparison, preserving duplicate multiplicities.",
+    "distinct_row_ordered_clouds": "Number of distinct exact coordinate arrays in the original ROI row order.",
+    "frames_with_duplicate_coordinates": "Number of native frames in which at least two different ROI rows have exactly the same coordinate triple. Denominator is native frames.",
+    "excess_duplicate_detections": "Sum of the excess rows beyond one per distinct coordinate triple within each frame, divided for the fraction by total rows across native frames.",
+    "numerics": "Read the original NPZ points as stored, check finite values, treat positive and negative zero equally, and use exact equality without rounding, axis transformations, distance tolerance, or tracker results."
+  },
+  "animals": [
+    {
+      "animal": "SK1_20230322_185704",
+      "source_sha256": "d161da948e3f3ba686798599297d8af3af4c101876abef5560d92363882d1f6b",
+      "frames": 1500,
+      "roi_rows_per_frame": 118,
+      "adjacent_pairs": 1499,
+      "adjacent_identical_count": 756,
+      "adjacent_identical_fraction": 0.5043362241494329,
+      "distinct_point_clouds": 744,
+      "distinct_row_ordered_clouds": 744,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    },
+    {
+      "animal": "SK1_20230322_201650",
+      "source_sha256": "2393811c47687489380cc631cd2301bcf6e7513e756adaa1c75083df4ca9fa92",
+      "frames": 1500,
+      "roi_rows_per_frame": 117,
+      "adjacent_pairs": 1499,
+      "adjacent_identical_count": 856,
+      "adjacent_identical_fraction": 0.57104736490994,
+      "distinct_point_clouds": 644,
+      "distinct_row_ordered_clouds": 644,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    },
+    {
+      "animal": "SK1_20230506_150145",
+      "source_sha256": "8a7dbd5a4c9adbbe5fa483b4d24f070a6a33126e4795fac5e211fa425eb09636",
+      "frames": 1500,
+      "roi_rows_per_frame": 93,
+      "adjacent_pairs": 1499,
+      "adjacent_identical_count": 594,
+      "adjacent_identical_fraction": 0.3962641761174116,
+      "distinct_point_clouds": 906,
+      "distinct_row_ordered_clouds": 906,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    },
+    {
+      "animal": "SK1_20230506_153351",
+      "source_sha256": "75fe94891735b855df056e00219f41eea9d2ad6bda30a17b7cd9bae08c9baf46",
+      "frames": 1500,
+      "roi_rows_per_frame": 103,
+      "adjacent_pairs": 1499,
+      "adjacent_identical_count": 496,
+      "adjacent_identical_fraction": 0.33088725817211473,
+      "distinct_point_clouds": 1004,
+      "distinct_row_ordered_clouds": 1004,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    },
+    {
+      "animal": "SK2_20220426_w00",
+      "source_sha256": "e94d43a80d4e4c61e44165affa298148dd4cd502b11705ff130bd0afcf76c056",
+      "frames": 3000,
+      "roi_rows_per_frame": 121,
+      "adjacent_pairs": 2999,
+      "adjacent_identical_count": 1842,
+      "adjacent_identical_fraction": 0.6142047349116372,
+      "distinct_point_clouds": 1157,
+      "distinct_row_ordered_clouds": 1157,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    },
+    {
+      "animal": "SK2_20220426_w01",
+      "source_sha256": "63ad1a836a567a75aca5e415e559df35bd5051e889dda2a3fb14e43b10816cea",
+      "frames": 3000,
+      "roi_rows_per_frame": 140,
+      "adjacent_pairs": 2999,
+      "adjacent_identical_count": 1993,
+      "adjacent_identical_fraction": 0.6645548516172057,
+      "distinct_point_clouds": 1006,
+      "distinct_row_ordered_clouds": 1006,
+      "frames_with_duplicate_coordinates": 0,
+      "fraction_frames_with_duplicate_coordinates": 0.0,
+      "excess_duplicate_detections": 0,
+      "fraction_excess_duplicate_detections": 0.0
+    }
+  ]
+}
